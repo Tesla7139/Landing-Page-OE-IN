@@ -204,6 +204,84 @@
   .cp-cse--urbanic .cp-cse__copy { flex: 0 1 600px; }
   .cp-cse--savana .cp-cse__inner,
   .cp-cse--urbanic .cp-cse__inner { min-height: 520px; padding-right: calc(36% + 40px); }
+  /* ── Savana and Urbanic side by side ─────────────
+     Two cards in two columns, each its photo over its story, so the pair
+     reads as one spread rather than two stacked banners. */
+  .cp-cse-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+                 margin: 40px 40px 0; align-items: stretch; }
+  .cp-cse-pair .cp-cse { margin: 0; display: flex; flex-direction: column; }
+  .cp-cse-pair .cp-cse__photo { position: static; width: 100%; height: 340px; }
+  .cp-cse--savana .cp-cse__photo { object-position: 50% 30%; }
+  .cp-cse--urbanic .cp-cse__photo { object-position: 50% 12%; }
+  .cp-cse-pair .cp-cse__inner { flex: 1 1 auto; min-height: 0;
+                                padding: 36px 40px 44px; align-items: flex-start; }
+  .cp-cse-pair .cp-cse__copy { flex: 1 1 auto; }
+  /* the video tile makes the pair a spread of three */
+  .cp-cse-pair { grid-template-columns: 1fr 1fr minmax(300px, 0.72fr); }
+  .cp-vt { position: relative; margin: 0; border-radius: 28px; overflow: hidden;
+           background: #0B1430; min-height: 560px;
+           box-shadow: 0 26px 60px -30px rgba(10, 22, 40, 0.45); }
+  .cp-vt__v { position: absolute; inset: 0; width: 100%; height: 100%;
+              object-fit: cover; object-position: 50% 20%; background: #0B1430; }
+  /* a scrim under the caption so it reads over any frame */
+  .cp-vt::after { content: ""; position: absolute; inset: 40% 0 0 0; pointer-events: none;
+                  background: linear-gradient(rgba(5, 10, 28, 0), rgba(5, 10, 28, 0.88)); }
+  .cp-vt__play { position: absolute; z-index: 2; left: 50%; top: 42%;
+                 transform: translate(-50%, -50%); width: 76px; height: 76px;
+                 border-radius: 50%; border: 0; cursor: pointer;
+                 display: inline-flex; align-items: center; justify-content: center;
+                 background: #ffffff; color: #155FFF;
+                 box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.22), 0 18px 40px -12px rgba(0, 0, 0, 0.5);
+                 transition: transform 180ms ease-out; }
+  .cp-vt__play:hover { transform: translate(-50%, -50%) scale(1.06); }
+  .cp-vt__play:focus-visible { outline: 3px solid #ffffff; outline-offset: 6px; }
+  .cp-vt__play svg { margin-left: 3px; }
+  .cp-vt__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0;
+                padding: 0 28px 30px; display: flex; flex-direction: column;
+                align-items: flex-start; gap: 8px; color: #ffffff; pointer-events: none; }
+  .cp-vt__tag { padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600;
+                letter-spacing: 0.04em; text-transform: uppercase;
+                background: rgba(255, 255, 255, 0.16); }
+  .cp-vt__cap img { width: 120px; height: auto; margin-top: 6px; }
+  .cp-vt__cap b { font-size: 22px; font-weight: 600; line-height: 28px; }
+  .cp-vt__cap i { font-style: normal; font-size: 14px; line-height: 20px;
+                  color: rgba(255, 255, 255, 0.82); }
+  /* playing: the player's own controls take over */
+  .cp-vt.is-playing .cp-vt__play, .cp-vt.is-playing .cp-vt__cap,
+  .cp-vt.is-playing::after { display: none; }
+  @media (prefers-reduced-motion: reduce) { .cp-vt__play { transition: none; } }
+  /* ── Video and reviews ───────────────────────────
+     The video at its own aspect ratio, capped in height so a portrait
+     clip does not run off the screen; 9:16 holds the space until the
+     file says otherwise. The reviews take the rest of the row. */
+  .cp-vr { margin: 40px 40px 0; display: flex; flex-direction: row; gap: 24px;
+           align-items: stretch; }
+  .cp-vt--native { flex: 0 0 auto; min-height: 0; align-self: flex-start;
+                   background: #0B1430; }
+  .cp-vt--native .cp-vt__v { position: static; display: block; width: auto;
+                             height: auto; max-height: 640px; max-width: 100%;
+                             aspect-ratio: auto 9 / 16; min-height: 360px;
+                             object-fit: contain; }
+  .cp-vt--native .cp-vt__play { top: 46%; }
+  /* until the file's own size is known: a 9:16 frame of real height */
+  .cp-vt--native:not(.has-meta) .cp-vt__v { width: 338px; height: 600px; }
+  .cp-vr__reviews { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column;
+                    gap: 24px; }
+  .cp-vr__card { flex: 1 1 0; margin: 0; padding: 36px 40px; border-radius: 28px;
+                 display: flex; flex-direction: column; justify-content: center;
+                 color: #ffffff; box-shadow: 0 26px 60px -30px rgba(10, 22, 40, 0.45); }
+  .cp-vr__card--savana { background: #2E4A3B; }
+  .cp-vr__card--urbanic { background: #0B1430; }
+  .cp-vr__logo { display: block; width: 140px; height: auto; }
+  .cp-vr__card blockquote { margin: 20px 0 0; font-size: 19px; line-height: 30px;
+                            font-weight: 500; color: #ffffff; }
+  .cp-vr__qm { display: block; margin-bottom: 10px; color: rgba(255, 255, 255, 0.45); }
+  .cp-vr__card figcaption { margin-top: 20px; display: flex; align-items: center; gap: 12px; }
+  .cp-vr__card figcaption img { width: 44px; height: 44px; border-radius: 50%;
+                                object-fit: cover; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25); }
+  .cp-vr__card figcaption span { display: flex; flex-direction: column; font-size: 13px;
+                                 line-height: 18px; color: rgba(255, 255, 255, 0.78); }
+  .cp-vr__card figcaption b { font-size: 15px; font-weight: 600; color: #ffffff; }
   .cp-cse__results { width: 100%; max-width: 440px; padding: 28px 30px 10px;
                      border-radius: 16px; background: #ffffff;
                      box-shadow: 0 34px 70px -26px rgba(4, 12, 30, 0.6); }
@@ -454,6 +532,24 @@
   .cp-rto__more summary:focus-visible { outline: 2px solid #155FFF; outline-offset: 2px; }
   @media (prefers-reduced-motion: reduce) { .cp-rc__bar path { transition: none; } }
 
+  /* ── Case-study cards as links ───────────────────
+     The whole card is the link: an invisible layer over it, so the
+     card's own markup stays as it was. */
+  .cp-cs4__card { position: relative; transition: border-color 160ms ease-out,
+                  transform 200ms ease-out; }
+  .cp-cs4__card:hover { border-color: #4A5357; transform: translateY(-3px); }
+  .cp-cs4__card:has(.cp-cs4__open:focus-visible) { outline: 2px solid #8FB2FF;
+                                                    outline-offset: 3px; }
+  .cp-cs4__open { position: absolute; inset: 0; z-index: 2; border: 0; padding: 0;
+                  background: none; border-radius: inherit; cursor: pointer; }
+  .cp-cs4__open:focus-visible { outline: none; }
+  .cp-vh { position: absolute; width: 1px; height: 1px; overflow: hidden;
+           clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (prefers-reduced-motion: reduce) {
+    .cp-cs4__card { transition: none; }
+    .cp-cs4__card:hover { transform: none; }
+  }
+
   /* ── The case-study heading ──────────────────
      The clip that used to stand beside it is the first card on the ring
      now, so the words centre over the ring again. */
@@ -487,8 +583,7 @@
   .cp-page > section:first-of-type { border-top: 0; }
   .cp-page > [data-screen-label="Reviews"],
   .cp-page > [data-screen-label="Case study: RTO"],
-  .cp-page > [data-screen-label="Case study: Savana"],
-  .cp-page > [data-screen-label="Case study: Urbanic"],
+  .cp-page > [data-screen-label="Video and reviews"],
   .cp-page > [data-screen-label="Customer stories (video)"],
   .cp-page > [data-screen-label="Case studies"],
   .cp-page > footer { border-top: 0; }
@@ -1748,6 +1843,21 @@
     .cp-steps__dots { padding: 14px 0 0 !important;
                       margin: 0 !important;
                       align-self: stretch !important; }
+    /* video above, the two reviews under it */
+    .cp-vr { flex-direction: column !important; margin: 32px 16px 0 !important;
+             gap: 16px !important; }
+    .cp-vt--native { align-self: center !important; border-radius: 20px !important; }
+    .cp-vt--native .cp-vt__v { max-height: 560px !important; }
+    .cp-vt--native:not(.has-meta) .cp-vt__v { width: 290px !important; height: 515px !important; }
+    .cp-vr__card { padding: 26px 22px !important; border-radius: 20px !important;
+                   text-align: left !important; align-items: flex-start !important; }
+    .cp-vr__card blockquote { font-size: 16.5px !important; line-height: 27px !important; }
+    /* the pair stacks on a phone */
+    .cp-cse-pair { grid-template-columns: 1fr !important; gap: 20px !important;
+                   margin: 32px 16px 0 !important; }
+    .cp-cse-pair .cp-cse { margin: 0 !important; }
+    .cp-cse-pair .cp-cse__photo { height: 240px !important; }
+    .cp-vt { min-height: 520px !important; border-radius: 20px !important; }
     /* ── Case-study carousel ─────────────────────── */
     .cp-cs4 { padding: 56px 0 56px !important; }
     .cp-cs4__h { font-size: 28px !important; line-height: 36px !important;
@@ -2811,10 +2921,11 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
        a tall photo with the headline figure along its foot, and the
        result in a line under it. Figures from the merchants' reviews and
        the Sales Resources one-pagers. -->
-  <section class="cp-cs4" data-screen-label="Built for store ops" aria-labelledby="cp-cs4-h">
+  <section class="cp-cs4" id="case-study-row" style="scroll-margin-top: 104px;" data-screen-label="Built for store ops" aria-labelledby="cp-cs4-h">
     <h2 class="cp-cs4__h" id="cp-cs4-h">How Indian brands run order editing</h2>
     <div class="cp-cs4__track" tabindex="0" role="region" aria-label="Case studies, scrolls sideways">
         <article class="cp-cs4__card">
+          <a class="cp-cs4__open" href="case-studies/sotrue.html"><span class="cp-vh">Read the SoTrue case study</span></a>
           <img class="cp-cs4__logo" src="assets/case-study/sotrue-white.png" alt="SoTrue" width="207" height="48">
           <div class="cp-cs4__media">
             <img class="cp-cs4__img" src="assets/case-study/sotrue-portrait.webp" alt="A SoTrue model holding a tube of SoTrue glow cream to her face" width="800" height="955" loading="lazy" style="object-position: 50% 30%;">
@@ -2824,6 +2935,7 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <p class="cp-cs4__meta">Indian beauty brand, ~63,000 shipments a month</p>
         </article>
         <article class="cp-cs4__card">
+          <a class="cp-cs4__open" href="case-studies/mars.html"><span class="cp-vh">Read the Mars by GHC case study</span></a>
           <img class="cp-cs4__logo cp-cs4__logo--dark" src="assets/customers/marsbyghc.png" alt="Mars by GHC" width="186" height="44">
           <div class="cp-cs4__media">
             <img class="cp-cs4__img" src="assets/case-study/marsbyghc-poster.webp" alt="Mars by GHC supplements on a poolside tray" width="700" height="400" loading="lazy" style="object-position: 50% 60%;">
@@ -2833,6 +2945,7 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <p class="cp-cs4__meta">7-figure supplements brand</p>
         </article>
         <article class="cp-cs4__card">
+          <a class="cp-cs4__open" href="case-studies/bananaclub.html"><span class="cp-vh">Read the Banana Club case study</span></a>
           <img class="cp-cs4__logo cp-cs4__logo--dark" src="assets/customers/bananaclub.png" alt="Banana Club" width="345" height="42">
           <div class="cp-cs4__media">
             <img class="cp-cs4__img" src="assets/case-study/bananaclub-portrait.webp" alt="Banana Club&rsquo;s Wanderer campaign: two men climbing over rocks" width="800" height="1119" loading="lazy" style="object-position: 50% 30%;">
@@ -2842,6 +2955,7 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <p class="cp-cs4__meta">Indian fashion brand</p>
         </article>
         <article class="cp-cs4__card">
+          <a class="cp-cs4__open" href="case-studies/savana.html"><span class="cp-vh">Read the Savana case study</span></a>
           <img class="cp-cs4__logo" src="assets/case-study/savana-white.png" alt="Savana" width="520" height="87">
           <div class="cp-cs4__media">
             <img class="cp-cs4__img" src="assets/case-study/savana-hero.webp" alt="A Savana model in a green floral dress on a picnic blanket" width="825" height="1100" loading="lazy" style="object-position: 50% 40%;">
@@ -2850,24 +2964,14 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <h3 class="cp-cs4__title">Address and item edits off the queue, and returns CSAT up</h3>
           <p class="cp-cs4__meta">Gen Z fashion, 18L+ orders a month</p>
         </article>
-        <article class="cp-cs4__card">
-          <img class="cp-cs4__logo" src="assets/case-study/urbanic-white.png" alt="Urbanic" width="520" height="130">
-          <div class="cp-cs4__media">
-            <img class="cp-cs4__img" src="assets/case-study/urbanic-hero.webp" alt="Four Urbanic models in bright summer outfits, laughing" width="1100" height="1100" loading="lazy" style="object-position: 60% 40%;">
-            <div class="cp-cs4__stat"><b>20&ndash;25%</b><span>fewer support queries</span></div>
-          </div>
-          <h3 class="cp-cs4__title">Customers fix their own address or item, so the team is off that queue</h3>
-          <p class="cp-cs4__meta">Digital-first fashion brand</p>
-        </article>
     </div>
     <div class="cp-cs4__nav">
       <button type="button" class="cp-cs4__btn" data-dir="-1" aria-label="Previous case study" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
       <div class="cp-cs4__dots">
-          <button type="button" class="cp-cs4__dot" data-i="0" aria-label="Case study 1 of 5" aria-current="true"></button>
-          <button type="button" class="cp-cs4__dot" data-i="1" aria-label="Case study 2 of 5"></button>
-          <button type="button" class="cp-cs4__dot" data-i="2" aria-label="Case study 3 of 5"></button>
-          <button type="button" class="cp-cs4__dot" data-i="3" aria-label="Case study 4 of 5"></button>
-          <button type="button" class="cp-cs4__dot" data-i="4" aria-label="Case study 5 of 5"></button>
+          <button type="button" class="cp-cs4__dot" data-i="0" aria-label="Case study 1 of 4" aria-current="true"></button>
+          <button type="button" class="cp-cs4__dot" data-i="1" aria-label="Case study 2 of 4"></button>
+          <button type="button" class="cp-cs4__dot" data-i="2" aria-label="Case study 3 of 4"></button>
+          <button type="button" class="cp-cs4__dot" data-i="3" aria-label="Case study 4 of 4"></button>
       </div>
       <button type="button" class="cp-cs4__btn" data-dir="1" aria-label="Next case study"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
     </div>
@@ -3901,45 +4005,35 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           </div>
         </div>
       </section>
-  <!-- ── Case studies: Savana and Urbanic ───────────
-       From the two one-pagers in Sales Resources (Oct 2026). The quote
-       and the figures are theirs, word for word; nothing is rounded.
-       Both are in the carousel above too, in short. -->
-    <section class="cp-cse cp-cse--savana" data-screen-label="Case study: Savana">
-        <img class="cp-cse__photo" src="assets/case-study/savana-hero.webp" alt="A Savana model in a green floral dress on a picnic blanket" width="825" height="1100" loading="lazy">
-        <div class="cp-cse__inner">
-          <div class="cp-cse__copy">
-            <img class="cp-cse__mark cp-cse__mark--savana" src="assets/case-study/savana-white.png" alt="Savana" width="520" height="87">
-            <span class="cp-cse__eyebrow">Fashion for millennial and Gen Z shoppers in India</span>
-            <h2 class="cp-cse__h">
-              <span><b>25%</b><i>support queries self-served</i></span>
-              <span><b>18L+</b><i>D2C orders a month</i></span>
-            </h2>
-            <figure class="cp-cse__quote">
-              <blockquote><svg class="cp-cse__qm" width="19" height="15" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>With ClickPost, customers update their own address or item, so our team is off that queue. Returns are managed through ClickPost across multiple couriers too, so the pickup journey is tracked and communicated. Our returns CSAT has gone up.</blockquote>
-              <figcaption><img class="cp-cse__face" src="assets/case-study/ashutosh-sharma.webp" alt="" width="160" height="160"><span><b>Ashutosh Sharma</b>Growth and Expansion, Urbanic and Savana</span></figcaption>
-            </figure>
-            <a class="cp-cta-more" href="#book-a-call"><span>Book a demo</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
-          </div>
-        </div>
-    </section>
-    <section class="cp-cse cp-cse--urbanic" data-screen-label="Case study: Urbanic">
-        <img class="cp-cse__photo" src="assets/case-study/urbanic-hero.webp" alt="Four Urbanic models in bright summer outfits, laughing" width="1100" height="1100" loading="lazy">
-        <div class="cp-cse__inner">
-          <div class="cp-cse__copy">
-            <img class="cp-cse__mark cp-cse__mark--urbanic" src="assets/case-study/urbanic-white.png" alt="Urbanic" width="520" height="130">
-            <span class="cp-cse__eyebrow">Digital-first fashion and retail brand, founded 2019</span>
-            <h2 class="cp-cse__h">
-              <span><b>20&ndash;25%</b><i>fewer support queries</i></span>
-            </h2>
-            <figure class="cp-cse__quote">
-              <blockquote><svg class="cp-cse__qm" width="19" height="15" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>Order edits were a quarter of our support queries and a real source of customer anxiety. With ClickPost, customers update their own address or item, so our team is off that queue entirely.</blockquote>
-              <figcaption><img class="cp-cse__face" src="assets/case-study/ashutosh-sharma.webp" alt="" width="160" height="160"><span><b>Ashutosh Sharma</b>Growth and Expansion, Urbanic and Savana</span></figcaption>
-            </figure>
-            <a class="cp-cta-more" href="#book-a-call"><span>Book a demo</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
-          </div>
-        </div>
-    </section>
+  <!-- ── Urbanic on camera, and the Savana and Urbanic reviews ──
+       The video keeps its own shape - nothing crops it - and the two
+       reviews sit beside it as brand and words only. Click to play,
+       never autoplay. -->
+  <section class="cp-vr" data-screen-label="Video and reviews">
+    <figure class="cp-vt cp-vt--native">
+      <video class="cp-vt__v" src="assets/testimonials/urbanic.mp4" preload="metadata" playsinline></video>
+      <button type="button" class="cp-vt__play" aria-label="Play Urbanic's video testimonial">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg>
+      </button>
+      <figcaption class="cp-vt__cap">
+        <span class="cp-vt__tag">Video testimonial</span>
+        <b>Hear it from Urbanic</b>
+        <i>Ashutosh Sharma, Growth and Expansion, on order editing</i>
+      </figcaption>
+    </figure>
+    <div class="cp-vr__reviews">
+      <figure class="cp-vr__card cp-vr__card--savana">
+        <img class="cp-vr__logo" src="assets/case-study/savana-white.png" alt="Savana" width="520" height="87">
+        <blockquote><svg class="cp-vr__qm" width="34" height="26" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>With ClickPost, customers update their own address or item, so our team is off that queue. Returns are managed through ClickPost across multiple couriers too, so the pickup journey is tracked and communicated. Our returns CSAT has gone up.</blockquote>
+        <figcaption><img src="assets/case-study/ashutosh-sharma.webp" alt="" width="160" height="160"><span><b>Ashutosh Sharma</b>Growth and Expansion, Urbanic and Savana</span></figcaption>
+      </figure>
+      <figure class="cp-vr__card cp-vr__card--urbanic">
+        <img class="cp-vr__logo" src="assets/case-study/urbanic-white.png" alt="Urbanic" width="520" height="130">
+        <blockquote><svg class="cp-vr__qm" width="34" height="26" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>Order edits were a quarter of our support queries and a real source of customer anxiety. With ClickPost, customers update their own address or item, so our team is off that queue entirely.</blockquote>
+        <figcaption><img src="assets/case-study/ashutosh-sharma.webp" alt="" width="160" height="160"><span><b>Ashutosh Sharma</b>Growth and Expansion, Urbanic and Savana</span></figcaption>
+      </figure>
+    </div>
+  </section>
 
   <!-- ── Integrations ─────────────────────────────────── -->
   <section style="padding: 120px 112px 80px; display: flex; flex-direction: column; gap: 64px; align-items: center;" data-screen-label="Integrations">
@@ -5021,6 +5115,24 @@ class Component extends DCLogic {
     }
     setTimeout(init, 300);
   })();
+</script>
+<script>
+  // Video tile: the play button swaps in the player's own controls and
+  // starts it. Delegated, like the carousel.
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".cp-vt__play");
+    if (!b) return;
+    var t = b.closest(".cp-vt"), v = t.querySelector("video");
+    t.classList.add("is-playing"); v.controls = true; v.play();
+    v.focus();
+  });
+</script>
+<script>
+  // The video tile takes the file's own shape once its size is known.
+  document.addEventListener("loadedmetadata", function (e) {
+    var t = e.target.closest && e.target.closest(".cp-vt--native");
+    if (t) t.classList.add("has-meta");
+  }, true);
 </script>
 </body>
 </html>

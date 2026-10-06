@@ -1,0 +1,197 @@
+/* Case-study pages. One stylesheet for all five; the feature block is the
+   Mars by GHC block the home page used to carry - the poster with its
+   figures hung off the bottom-left corner, the review beside it. */
+
+html, body { margin: 0; padding: 0; background: #ffffff; }
+* { box-sizing: border-box; }
+body { font-family: Poppins, system-ui, sans-serif; color: #252525;
+       -webkit-font-smoothing: antialiased; }
+a { color: #155FFF; text-decoration: none; }
+a:hover { color: #0A3FCC; }
+img { max-width: 100%; }
+:focus-visible { outline: 2px solid #155FFF; outline-offset: 3px; }
+
+/* ── Top bar ─────────────────────────────────────── */
+.cs-top { position: sticky; top: 0; z-index: 10; height: 80px;
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 0 112px; background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(6px); box-shadow: 0 0 20px rgba(16, 24, 40, 0.1); }
+.cs-brand img { display: block; width: 130px; height: auto; }
+.cs-top nav { display: flex; align-items: center; gap: 24px; }
+.cs-back { display: inline-flex; align-items: center; gap: 8px;
+           font-size: 14px; font-weight: 500; color: #344054; }
+.cs-back:hover { color: #101828; }
+.cs-btn { display: inline-flex; align-items: center; gap: 8px; height: 44px;
+          padding: 0 18px; border-radius: 4px; background: #155FFF; color: #ffffff;
+          font-size: 14.5px; font-weight: 500; white-space: nowrap;
+          transition: background 160ms ease-out; }
+.cs-btn:hover { background: #0A3FCC; color: #ffffff; }
+.cs-btn--ghost { background: #ffffff; color: #0A3FCC; border: 1px solid #C9D6F5; }
+.cs-btn--ghost:hover { background: #EEF3FF; color: #0A3FCC; }
+
+/* ── Title ───────────────────────────────────────── */
+/* the result, said once under the story, centred */
+.cs-hero { padding: 8px 112px 64px; max-width: 1100px; margin: 0 auto; text-align: center; }
+.cs-eyebrow { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em;
+              text-transform: uppercase; color: #155FFF; }
+.cs-hero h1 { margin: 12px 0 0; font-size: 48px; font-weight: 600; line-height: 58px;
+              letter-spacing: -0.02em; color: #101828; text-wrap: balance; }
+
+/* ── Feature: the Mars block ─────────────────────── */
+.cs-feature { display: flex; flex-direction: row; gap: 72px; align-items: center;
+              padding: 72px 112px 96px; }
+.cs-art { position: relative; margin: 0; width: 560px; flex-shrink: 0; }
+.cs-poster { display: block; width: 560px; height: 360px; object-fit: cover;
+             border-radius: 18px; box-shadow: 0 26px 60px -28px rgba(38, 74, 168, 0.4); }
+.cs-stat { position: absolute; bottom: -44px; width: 212px; border-radius: 12px;
+           background: #ffffff; overflow: hidden;
+           box-shadow: 0 18px 40px -18px rgba(16, 32, 90, 0.34); }
+.cs-stat--0 { left: 18px; }
+.cs-stat--1 { left: 244px; }
+.cs-stat:only-of-type { width: 240px; }
+.cs-stat b { display: block; padding: 16px 16px 14px; font-size: 34px; font-weight: 700;
+             line-height: 36px; letter-spacing: -0.03em; color: #17181C; }
+/* white on #155FFF is 5.10:1; one line, so the pair stays level */
+.cs-stat i { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 8px 16px 9px; background: #155FFF; font-style: normal;
+             font-size: 12px; font-weight: 600; line-height: 16px; color: #ffffff; }
+.cs-copy { margin: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.cs-qm { color: #B9CCFF; }
+.cs-copy blockquote { margin: 16px 0 0; max-width: 560px; font-size: 21px; line-height: 33px;
+                      letter-spacing: -0.01em; color: #252525; }
+.cs-copy figcaption { margin-top: 26px; display: flex; flex-direction: row; gap: 20px;
+                      align-items: center; font-size: 13.5px; font-weight: 500; color: #667085; }
+.cs-logo { display: block; width: 140px; height: auto; max-height: 44px; object-fit: contain;
+           object-position: left center; }
+/* the white marks made for dark grounds, inked for this one */
+.cs-logo--white { filter: brightness(0); opacity: 0.88; }
+.cs-person { margin-top: 18px; display: flex; align-items: center; gap: 12px; }
+.cs-person img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.cs-person span { display: flex; flex-direction: column; font-size: 13px; line-height: 18px;
+                  color: #667085; }
+.cs-person b { font-size: 15px; font-weight: 600; color: #101828; }
+.cs-lede { margin: 22px 0 0; max-width: 560px; font-size: 21px; line-height: 33px; color: #252525; }
+.cs-meta { margin: 14px 0 0; font-size: 14px; font-weight: 500; color: #667085; }
+
+/* ── Detail blocks ───────────────────────────────── */
+.cs-block { padding: 24px 112px 56px; }
+.cs-block h2 { margin: 0 0 22px; font-size: 30px; font-weight: 600; line-height: 38px;
+               letter-spacing: -0.015em; color: #101828; }
+.cs-card { padding: 26px 28px 22px; border-radius: 16px; background: #FAF9F5;
+           border: 1px solid #EEECE5; }
+.cs-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cs-ba > div { padding: 26px 28px; border-radius: 16px; background: #F5F6F8; }
+.cs-ba--after { background: #155FFF !important; color: #ffffff; }
+.cs-ba h3 { margin: 0; font-size: 18px; font-weight: 600; }
+.cs-ba ul { margin: 14px 0 0; padding-left: 20px; font-size: 15px; line-height: 24px; }
+.cs-ba li + li { margin-top: 10px; }
+.cs-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cs-results > div { display: flex; flex-direction: column; gap: 6px; padding: 24px 26px;
+                    border-radius: 16px; background: #EEF3FF; }
+.cs-results b { font-size: 19px; font-weight: 600; line-height: 26px; color: #0A3FCC; }
+.cs-results span { font-size: 14.5px; line-height: 22px; color: #344054; }
+.cs-solutions { margin: 18px 0 0; font-size: 14.5px; color: #475467; }
+.cs-solutions b { margin-right: 8px; color: #101828; }
+
+/* ── SoTrue chart (the home page's, unchanged) ───── */
+.cp-rc { margin: 0; }
+.cp-rc__key { display: flex; flex-direction: row; gap: 20px; }
+.cp-rc__key span { display: inline-flex; align-items: center; gap: 8px;
+                   font-size: 12.5px; font-weight: 500; color: #4A4840; }
+.cp-rc__key span::before { content: ""; width: 12px; height: 12px; border-radius: 3px; }
+.cp-rc__key--ndr::before { background: #E8A13A; }
+.cp-rc__key--rto::before { background: #155FFF; }
+.cp-rc__svg { display: block; width: 100%; max-width: 900px; height: auto; margin-top: 6px;
+              overflow: visible; }
+.cp-rc__grid { stroke: #E9E6DD; stroke-width: 1; }
+.cp-rc__grid--base { stroke: #CFCBBF; }
+.cp-rc__tick { font-size: 12px; fill: #8A887F; text-anchor: end; }
+.cp-rc__x { font-size: 13px; font-weight: 500; fill: #4A4840; text-anchor: middle; }
+.cp-rc__val { font-size: 13px; font-weight: 600; fill: #1B1D1A; text-anchor: middle; }
+.cp-rc__hit { fill: transparent; }
+.cp-rc__bar--ndr path { fill: #E8A13A; }
+.cp-rc__bar--rto path { fill: #155FFF; }
+.cp-rc__bar path { transition: opacity 120ms ease-out; }
+.cp-rc__svg:hover .cp-rc__bar path { opacity: 0.45; }
+.cp-rc__svg:hover .cp-rc__bar:hover path { opacity: 1; }
+.cp-rto__more { margin-top: 12px; }
+.cp-rto__more summary { cursor: pointer; font-size: 13.5px; font-weight: 500; color: #0A3FCC; }
+.cp-rto__wrap { margin-top: 14px; overflow-x: auto; }
+.cp-rto__table { width: 100%; border-collapse: collapse; font-size: 13.5px;
+                 font-variant-numeric: tabular-nums; color: #17190F; }
+.cp-rto__table th, .cp-rto__table td { padding: 11px 10px; text-align: right;
+                 white-space: nowrap; border-bottom: 1px solid #ECEAE3; }
+.cp-rto__table thead th { font-size: 12px; font-weight: 500; color: #6E6C64;
+                          border-bottom-color: #DEDBD2; }
+.cp-rto__table th:first-child { padding-left: 0; text-align: left; font-weight: 600; }
+.cp-rto__table td:last-child { padding-right: 0; }
+.cp-rto__table tbody tr:last-child th,
+.cp-rto__table tbody tr:last-child td { border-bottom: 0; }
+.cp-rto__bar { display: inline-block; vertical-align: middle; width: 64px; height: 8px;
+               margin-right: 10px; border-radius: 4px; background: #E7ECF9;
+               position: relative; overflow: hidden; }
+.cp-rto__bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+                       width: var(--w); border-radius: 4px; background: #155FFF; }
+
+/* ── Close and next ──────────────────────────────── */
+.cs-close { margin: 24px 112px 0; padding: 56px 48px; border-radius: 20px;
+            background: #0B1430; color: #ffffff; text-align: center; }
+.cs-close h2 { margin: 0; font-size: 34px; font-weight: 600; line-height: 42px; }
+.cs-close p { margin: 10px 0 0; font-size: 16px; color: rgba(255, 255, 255, 0.82); }
+.cs-close__acts { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px;
+                  justify-content: center; }
+.cs-close .cs-btn { height: 50px; padding: 0 24px; font-size: 15.5px; }
+.cs-close .cs-btn--ghost { background: transparent; color: #ffffff;
+                           border-color: rgba(255, 255, 255, 0.4); }
+.cs-close .cs-btn--ghost:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
+.cs-close :focus-visible { outline-color: #ffffff; }
+.cs-next { margin: 40px 112px 0; padding: 28px 0; display: flex; justify-content: space-between;
+           align-items: center; border-top: 1px solid #EAECF0; border-bottom: 1px solid #EAECF0; }
+.cs-next span { font-size: 14px; font-weight: 500; color: #667085; }
+.cs-next b { display: inline-flex; align-items: center; gap: 10px; font-size: 22px;
+             font-weight: 600; color: #101828; }
+.cs-next:hover b { color: #155FFF; }
+.cs-foot { padding: 36px 112px 48px; font-size: 13.5px; color: #667085; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-btn, .cp-rc__bar path { transition: none; }
+}
+
+/* ── Phone ───────────────────────────────────────── */
+@media (max-width: 860px) {
+  .cs-top { height: 64px; padding: 0 16px; }
+  .cs-brand img { width: 108px; }
+  .cs-top nav { gap: 14px; }
+  .cs-back { font-size: 13px; }
+  .cs-top .cs-btn { height: 38px; padding: 0 12px; font-size: 13px; }
+  .cs-top .cs-btn svg { display: none; }
+  .cs-hero { padding: 0 20px 40px; }
+  .cs-hero h1 { font-size: 30px; line-height: 38px; }
+  .cs-feature { flex-direction: column; align-items: stretch; gap: 64px; padding: 32px 20px 48px; }
+  .cs-art { width: 100%; }
+  .cs-poster { width: 100%; height: 240px; }
+  .cs-stat { width: calc(50% - 12px); bottom: -38px; }
+  .cs-stat:only-of-type { width: 62%; }
+  .cs-stat--0 { left: 8px; }
+  .cs-stat--1 { left: auto; right: 8px; }
+  .cs-stat b { font-size: 26px; line-height: 28px; padding: 12px 12px 10px; }
+  .cs-stat i { white-space: normal; min-height: 49px; }
+  .cs-copy blockquote, .cs-lede { font-size: 17px; line-height: 28px; }
+  .cs-qm { width: 38px; height: 29px; }
+  .cs-copy figcaption { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .cs-block { padding: 8px 20px 40px; }
+  .cs-block h2 { font-size: 24px; line-height: 31px; }
+  .cs-card { padding: 20px 16px 16px; }
+  .cs-ba, .cs-results { grid-template-columns: 1fr; }
+  .cp-rc__val, .cp-rc__x { font-size: 28px; }
+  .cp-rc__tick { font-size: 24px; }
+  .cp-rto__bar { display: none; }
+  .cs-close { margin: 16px 16px 0; padding: 40px 22px; }
+  .cs-close h2 { font-size: 26px; line-height: 33px; }
+  .cs-next { margin: 32px 20px 0; }
+  .cs-next b { font-size: 18px; }
+  .cs-foot { padding: 28px 20px 40px; }
+}
+@media (max-width: 420px) {
+  .cs-back span, .cs-back { font-size: 0; gap: 0; }
+  .cs-back svg { width: 20px; height: 18px; }
+}
