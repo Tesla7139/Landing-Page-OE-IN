@@ -22,10 +22,12 @@ Sell ClickPost Order Editing & Upsells to Shopify merchants. Shoppers fix
 their own orders after checkout (address, contact details, items, discount
 codes, cancellation) and see a one tap upsell while they are there.
 
-Success is a single action: **install from the Shopify App Store**. The
-booking form at the end of the page is a fallback for larger stores, not the
-target. Every section is either evidence that the app is safe to install or a
-step toward the Install button.
+This is the India page. Success is a single action: **book a demo**. The
+demo is the primary button in the header, the drawer and the hero, and the
+booking form leads the closing section. Installing from the Shopify App Store
+stays on the page as the secondary path. The page leads with Indian brands,
+the reviews that name Mohit, and the Indian checkout and payments stack
+(GoKwik, Shopflo, Razorpay). Languages get one line, not a section.
 
 ## Brand Personality
 
@@ -57,7 +59,7 @@ by swapping the noun, it has failed.
 4. **Motion has to earn its keep.** The page has a lot of it: a rotating
    globe, a 3D case study ring, scroll driven steps. Each has to be doing a
    job, and each has to stop for anyone who asks it to.
-5. **Everything points at Install.** Sections may inform or reassure, but none
+5. **Everything points at the demo.** Sections may inform or reassure, but none
    should become a destination of its own.
 
 ## Accessibility & Inclusion

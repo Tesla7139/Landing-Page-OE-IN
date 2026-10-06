@@ -87,19 +87,22 @@ def row(reviews, direction):
     ).format(d=direction, cards=cards)
 
 
-def lead_with_non_india(reviews):
-    """Put the international reviews at the front of both rows.
+def lead_with_india(reviews):
+    """Put the reviews that name Mohit first, then the Indian stores.
 
-    The listing is India-heavy (39 of 57), so without this the strip opens on
-    a run of Indian stores. Entries with no country ride with the India group
-    rather than the international one - most of them are Indian brands, and
-    guessing the other way would overstate the spread. Order within each group
-    is unchanged, so both stay newest-first.
+    This is the India page, so the wall opens on the team a merchant here
+    would be talking to and on stores they would recognise. Entries with no
+    country ride with the India group - most of them are Indian brands. The
+    international reviews come last. Order within each group is unchanged,
+    so all three stay newest-first.
     """
-    intl = [r for r in reviews if r.get("country") and r["country"] != "India"]
-    rest = [r for r in reviews if not (r.get("country") and r["country"] != "India")]
-    print("leading with %d non-India review(s), %d after" % (len(intl), len(rest)))
-    return intl + rest
+    mohit = [r for r in reviews if "Mohit" in r["quote"]]
+    rest = [r for r in reviews if "Mohit" not in r["quote"]]
+    india = [r for r in rest if not r.get("country") or r["country"] == "India"]
+    intl = [r for r in rest if r.get("country") and r["country"] != "India"]
+    print("leading with %d Mohit review(s), then %d India, then %d international"
+          % (len(mohit), len(india), len(intl)))
+    return mohit + india + intl
 
 
 def main():
@@ -109,7 +112,7 @@ def main():
     if not reviews:
         sys.exit("reviews.json has no entries")
 
-    reviews = lead_with_non_india(reviews)
+    reviews = lead_with_india(reviews)
 
     # alternate so both rows stay balanced however many reviews there are
     top = reviews[0::2]

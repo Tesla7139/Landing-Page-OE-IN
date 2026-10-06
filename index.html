@@ -54,7 +54,7 @@
     to   { transform: translateX(calc(-1 * (var(--cp-bs-half) + var(--cp-bs-span)))); } }
   .cp-bs:hover .cp-bs__track { animation-play-state: paused; }
 
-  .cp-bs__item { display: flex; flex-direction: row; align-items: center;
+  .cp-bs__item { display: flex; flex-direction: row; align-items: flex-start;
                  flex-shrink: 0; margin-right: 32px; }
   .cp-bs__brand { display: flex; flex-direction: column; align-items: center;
                   flex-shrink: 0; width: 176px; }
@@ -73,6 +73,10 @@
      reviewer, where there is room for the full name */
   .cp-bs__where { font-size: 11px; font-weight: 600; letter-spacing: 0.02em;
                   color: #D97706; white-space: nowrap; }
+  /* Indian brands carry the country under the mark on the India page,
+     in the same amber as the reviewer caption */
+  .cp-bs__country { margin-top: 6px; font-size: 11px; font-weight: 600;
+                    letter-spacing: 0.02em; color: #B45309; white-space: nowrap; }
   .cp-bs__panel { overflow: hidden; max-width: 0; opacity: 0;
                   transition: max-width 300ms ease-out, opacity 300ms ease-out; }
   .cp-bs__item:hover .cp-bs__panel { max-width: 320px; opacity: 1; }
@@ -171,6 +175,48 @@
                   height: auto; transform: translateY(-50%);
                   border-radius: 12px;
                   box-shadow: 0 34px 70px -26px rgba(60, 6, 30, 0.55); }
+  /* ── Savana and Urbanic ─────────────────────────
+     The DOONAILS card with the brand's photo on the right and a results
+     card over the seam where the screenshot was. Savana takes the sage
+     of its photograph, Urbanic the navy of its one-pager; white is
+     9.6:1 and 17:1 on them. */
+  .cp-cse--savana { background: #2E4A3B; }
+  .cp-cse--urbanic { background: #0B1430; margin-top: 32px; }
+  .cp-cse__mark--savana { width: 150px; }
+  .cp-cse__mark--urbanic { width: 150px; }
+  .cp-cse__eyebrow { margin-top: 14px; font-size: 14px; font-weight: 500;
+                     color: rgba(255, 255, 255, 0.82); }
+  .cp-cse__quote blockquote { font-size: 17px; line-height: 27px; }
+  .cp-cse__face { width: 40px; height: 40px; border-radius: 50%;
+                  object-fit: cover; flex-shrink: 0;
+                  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25); }
+  .cp-cse__quote figcaption span { display: flex; flex-direction: column;
+                  font-size: 13px; line-height: 18px; }
+  .cp-cse__quote figcaption span b { font-size: 15px; font-weight: 600;
+                                     color: #ffffff; }
+  .cp-cse .cp-cta-more { margin-top: 30px; }
+  .cp-cse--savana .cp-cse__stage,
+  .cp-cse--urbanic .cp-cse__stage { min-height: 0; display: flex;
+                                    align-items: center; }
+  /* Savana and Urbanic carry no results card now: the copy widens into
+     the room, stopping short of the photo's 36% */
+  .cp-cse--savana .cp-cse__copy,
+  .cp-cse--urbanic .cp-cse__copy { flex: 0 1 600px; }
+  .cp-cse--savana .cp-cse__inner,
+  .cp-cse--urbanic .cp-cse__inner { min-height: 520px; padding-right: calc(36% + 40px); }
+  .cp-cse__results { width: 100%; max-width: 440px; padding: 28px 30px 10px;
+                     border-radius: 16px; background: #ffffff;
+                     box-shadow: 0 34px 70px -26px rgba(4, 12, 30, 0.6); }
+  .cp-cse__rh { display: block; font-size: 13px; font-weight: 600;
+                letter-spacing: 0.06em; text-transform: uppercase;
+                color: #155FFF; }
+  .cp-cse__results ul { margin: 10px 0 0; padding: 0; list-style: none; }
+  .cp-cse__results li { padding: 16px 0; display: flex; flex-direction: column;
+                        gap: 3px; border-top: 1px solid #EEF0F4; }
+  .cp-cse__results li:first-child { border-top: 0; }
+  .cp-cse__results li b { font-size: 18px; font-weight: 600;
+                          letter-spacing: -0.01em; color: #101828; }
+  .cp-cse__results li span { font-size: 14px; line-height: 20px; color: #5B6475; }
   /* ── Case study: upsell revenue ───────────────
      The panel is the dashboard from the reference: a cream card, the
      title with its date range under it, a row of metrics each tagged
@@ -277,6 +323,137 @@
                              border-top: 2.4px solid #2E7D46; }
   .cp-gs__key--prev::before { border-top: 2px dotted #5B9BD5 !important; }
 
+  /* ── Case study: SoTrue RTO ─────────────────────
+     The upsell card's layout in ClickPost navy, with the month-by-month
+     table in place of the chart - three rows are the whole story, and
+     a table shows them exactly. */
+  .cp-gs--rto { background: radial-gradient(130% 110% at 26% 14%,
+                  #1846C4 0%, #123A9E 45%, #0D2E80 75%, #0A2263 100%); }
+  .cp-gs--rto .cp-gs__h span { color: #A9C6FF; }
+  .cp-gs--rto .cp-gs__card { box-shadow: 0 30px 64px -28px rgba(4, 16, 60, 0.55); }
+  .cp-rto__photo { display: block; width: 100%; height: auto; aspect-ratio: 16 / 11;
+                   object-fit: cover; object-position: 50% 28%;
+                   border-radius: 16px; margin-bottom: 26px;
+                   box-shadow: 0 24px 50px -24px rgba(4, 16, 60, 0.6); }
+  .cp-rto__mark { display: block; width: 124px; height: auto; margin-bottom: 18px; }
+  .cp-rto__wrap { margin-top: 18px; overflow-x: auto; }
+  .cp-rto__table { width: 100%; border-collapse: collapse; font-size: 13.5px;
+                   font-variant-numeric: tabular-nums; color: #17190F; }
+  .cp-rto__table th, .cp-rto__table td { padding: 11px 10px; text-align: right;
+                   white-space: nowrap; border-bottom: 1px solid #ECEAE3; }
+  .cp-rto__table thead th { font-size: 12px; font-weight: 500; color: #6E6C64;
+                            border-bottom-color: #DEDBD2; }
+  .cp-rto__table th:first-child { padding-left: 0; text-align: left; font-weight: 600; }
+  .cp-rto__table thead th:first-child { font-weight: 500; }
+  .cp-rto__table td:last-child { padding-right: 0; }
+  .cp-rto__table tbody tr:last-child th,
+  .cp-rto__table tbody tr:last-child td { border-bottom: 0; }
+  .cp-rto__table td b { font-weight: 700; }
+  .cp-rto__bar { display: inline-block; vertical-align: middle; width: 64px;
+                 height: 8px; margin-right: 10px; border-radius: 4px;
+                 background: #E7ECF9; position: relative; overflow: hidden; }
+  .cp-rto__bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+                         width: var(--w); border-radius: 4px; background: #155FFF; }
+
+  /* ── Case-study carousel ─────────────────────────
+     A dark band, as in the reference: cards a little over three to a
+     screen, the fourth cut by the edge so the row reads as one that
+     scrolls. White on #15191A is 17:1, the meta line at 70% is 9:1. */
+  .cp-cs4 { background: #15191A; padding: 88px 0 80px; display: flex;
+            flex-direction: column; align-items: center; overflow: hidden; }
+  .cp-cs4__h { margin: 0 0 40px; padding: 0 20px; text-align: center;
+               font-size: 40px; font-weight: 600; line-height: 50px;
+               letter-spacing: -0.02em; color: #ffffff; }
+  .cp-cs4__track { align-self: stretch; display: flex; flex-direction: row;
+                   gap: 20px; overflow-x: auto; overscroll-behavior-x: contain;
+                   scroll-snap-type: x mandatory; scroll-padding-left: 112px;
+                   padding: 0 112px 8px; scrollbar-width: none; }
+  .cp-cs4__track::-webkit-scrollbar { display: none; }
+  .cp-cs4__track:focus-visible { outline: 2px solid #8FB2FF; outline-offset: 4px; }
+  .cp-cs4__card { flex: 0 0 392px; scroll-snap-align: start;
+                  display: flex; flex-direction: column;
+                  padding: 18px 16px 24px; border-radius: 20px;
+                  background: #1F2426; border: 1px solid #2A3033; }
+  .cp-cs4__logo { display: block; height: 30px; width: auto; max-width: 180px;
+                  object-fit: contain; object-position: left center;
+                  margin: 4px 0 18px 2px; }
+  /* Mars and Banana Club ship dark marks; on this ground they go white */
+  .cp-cs4__logo--dark { filter: brightness(0) invert(1); }
+  .cp-cs4__media { position: relative; border-radius: 14px; overflow: hidden;
+                   aspect-ratio: 4 / 5; background: #2A3033; }
+  .cp-cs4__img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  /* the headline figure where the reference has its play bar */
+  .cp-cs4__stat { position: absolute; left: 10px; right: 10px; bottom: 10px;
+                  display: flex; flex-direction: row; align-items: baseline;
+                  gap: 10px; padding: 12px 16px; border-radius: 12px;
+                  background: #155FFF; color: #ffffff;
+                  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6); }
+  .cp-cs4__stat b { font-size: 26px; font-weight: 700; line-height: 30px;
+                    letter-spacing: -0.02em; white-space: nowrap; }
+  .cp-cs4__stat span { font-size: 13.5px; font-weight: 500; line-height: 18px; }
+  .cp-cs4__title { margin: 20px 4px 0; font-size: 21px; font-weight: 600;
+                   line-height: 28px; letter-spacing: -0.015em; color: #ffffff; }
+  .cp-cs4__meta { margin: 8px 4px 0; font-size: 14px; line-height: 20px;
+                  color: rgba(255, 255, 255, 0.7); }
+  .cp-cs4__nav { margin-top: 36px; display: flex; flex-direction: row;
+                 gap: 28px; align-items: center; }
+  .cp-cs4__btn { width: 52px; height: 52px; border-radius: 50%;
+                 display: inline-flex; align-items: center; justify-content: center;
+                 border: 1px solid #3A4144; background: #22282A; color: #ffffff;
+                 cursor: pointer; transition: background 160ms ease-out,
+                 opacity 160ms ease-out; }
+  .cp-cs4__btn:hover:not(:disabled) { background: #2E3538; }
+  .cp-cs4__btn:disabled { opacity: 0.35; cursor: default; }
+  .cp-cs4__btn:focus-visible, .cp-cs4__dot:focus-visible,
+  .cp-cs4__cta:focus-visible { outline: 2px solid #8FB2FF; outline-offset: 3px; }
+  .cp-cs4__dot[hidden] { display: none; }
+  .cp-cs4__dots { display: flex; flex-direction: row; gap: 10px; align-items: center; }
+  .cp-cs4__dot { width: 12px; height: 12px; padding: 0; border-radius: 9999px;
+                 border: 1.5px solid rgba(255, 255, 255, 0.55); background: none;
+                 cursor: pointer; transition: width 200ms ease-out, background 200ms ease-out; }
+  .cp-cs4__dot[aria-current="true"] { width: 36px; border-color: #5B8CFF;
+                                      background: #5B8CFF; }
+  .cp-cs4__cta { margin-top: 48px; display: inline-flex; flex-direction: row;
+                 gap: 14px; align-items: center; height: 54px; padding: 0 26px;
+                 border-radius: 9999px; background: #ffffff; color: #101828;
+                 font-size: 17px; font-weight: 500; text-decoration: none;
+                 transition: background 160ms ease-out; }
+  .cp-cs4__cta:hover { background: #EEF3FF; }
+  @media (prefers-reduced-motion: reduce) {
+    .cp-cs4__btn, .cp-cs4__dot, .cp-cs4__cta { transition: none; }
+  }
+  /* ── SoTrue chart: NDR and RTO by month ──────────
+     Grouped bars on one percentage axis - two rates, same scale, and the
+     drop is the point. RTO takes the brand blue, NDR amber (validated:
+     CVD dE 36.9, normal 43.9). The amber is 2.1:1 on the card, so every
+     bar carries its value as text; the exact counts are in the table. */
+  .cp-rc { margin: 18px 0 0; }
+  .cp-rc__key { display: flex; flex-direction: row; gap: 20px; }
+  .cp-rc__key span { display: inline-flex; align-items: center; gap: 8px;
+                     font-size: 12.5px; font-weight: 500; color: #4A4840; }
+  .cp-rc__key span::before { content: ""; width: 12px; height: 12px;
+                             border-radius: 3px; }
+  .cp-rc__key--ndr::before { background: #E8A13A; }
+  .cp-rc__key--rto::before { background: #155FFF; }
+  .cp-rc__svg { display: block; width: 100%; height: auto; margin-top: 6px;
+                overflow: visible; }
+  .cp-rc__grid { stroke: #E9E6DD; stroke-width: 1; }
+  .cp-rc__grid--base { stroke: #CFCBBF; }
+  .cp-rc__tick { font-size: 12px; fill: #8A887F; text-anchor: end; }
+  .cp-rc__x { font-size: 13px; font-weight: 500; fill: #4A4840; text-anchor: middle; }
+  .cp-rc__val { font-size: 13px; font-weight: 600; fill: #1B1D1A; text-anchor: middle; }
+  .cp-rc__hit { fill: transparent; }
+  .cp-rc__bar--ndr path { fill: #E8A13A; }
+  .cp-rc__bar--rto path { fill: #155FFF; }
+  .cp-rc__bar path { transition: opacity 120ms ease-out; }
+  .cp-rc__svg:hover .cp-rc__bar path { opacity: 0.45; }
+  .cp-rc__svg:hover .cp-rc__bar:hover path { opacity: 1; }
+  .cp-rto__more { margin-top: 10px; }
+  .cp-rto__more summary { cursor: pointer; font-size: 13px; font-weight: 500;
+                          color: #0A3FCC; }
+  .cp-rto__more summary:focus-visible { outline: 2px solid #155FFF; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .cp-rc__bar path { transition: none; } }
+
   /* ── The case-study heading ──────────────────
      The clip that used to stand beside it is the first card on the ring
      now, so the words centre over the ring again. */
@@ -309,8 +486,9 @@
   .cp-page > footer { border-top: 1px solid #EAEEF5; }
   .cp-page > section:first-of-type { border-top: 0; }
   .cp-page > [data-screen-label="Reviews"],
-  .cp-page > [data-screen-label="Case study"],
-  .cp-page > [data-screen-label="Case study: upsells"],
+  .cp-page > [data-screen-label="Case study: RTO"],
+  .cp-page > [data-screen-label="Case study: Savana"],
+  .cp-page > [data-screen-label="Case study: Urbanic"],
   .cp-page > [data-screen-label="Customer stories (video)"],
   .cp-page > [data-screen-label="Case studies"],
   .cp-page > footer { border-top: 0; }
@@ -553,6 +731,17 @@
     .cp-lang__more a { transition: none; }
   }
   .cp-lang__chip[aria-pressed="true"] { color: #155FFF; font-weight: 600; }
+  /* the India page keeps languages to one line under the integrations */
+  .cp-lang__line { margin: 0; max-width: 1216px; text-align: center;
+                   font-size: 17px; line-height: 28px; color: #454545; }
+  /* #0A3FCC for the same 4.5:1 reason as the request buttons above */
+  .cp-lang__line a { display: inline-flex; align-items: center; gap: 6px;
+                     margin-left: 6px; color: #0A3FCC; font-weight: 500;
+                     white-space: nowrap; }
+  .cp-lang__line a svg { flex-shrink: 0; }
+  .cp-lang__line a:hover { text-decoration: underline; }
+  .cp-lang__line a:focus-visible { outline: 2px solid #155FFF;
+                                   outline-offset: 3px; border-radius: 2px; }
 
   /* ── Built for Shopify ───────────────────
      Shopify's own announcement artwork, uncropped - 1623x687 paints 515
@@ -620,6 +809,47 @@
                   overflow: hidden;
                   box-shadow: 0 18px 40px -18px rgba(16, 32, 90, 0.34); }
   .cp-bfo__stat--a { left: 18px; }
+  .cp-bfo__stat--wide { width: 210px; }
+  /* ── The pair: Mars and Banana Club in two equal columns ──
+     Both posters cropped to 2:1 so they match; Mars from a little below
+     centre, where the products are. The review steps down to 18px - at
+     22 the Mars quote ran to eleven lines in a half-width column. */
+  /* A sideways carousel: each case a fixed card, the next one showing
+     past the right edge so it reads as more to come. The track runs out
+     through the section's side padding to the window edge and pads back
+     in, so the first card lines up with the page column and the last can
+     still scroll fully into view. */
+  .cp-bfo--pair { display: flex; flex-direction: column; align-items: stretch;
+                  gap: 8px; }
+  .cp-bfo__track { display: flex; flex-direction: row; gap: 48px;
+                   overflow-x: auto; overscroll-behavior-x: contain;
+                   scroll-snap-type: x mandatory; scroll-padding-left: 112px;
+                   margin: 0 -112px; padding: 24px 112px 64px;
+                   scrollbar-width: none; }
+  .cp-bfo__track::-webkit-scrollbar { display: none; }
+  .cp-bfo__track:focus-visible { outline: 2px solid #155FFF; outline-offset: -2px; }
+  .cp-bfo__case { flex: 0 0 min(680px, 78%); scroll-snap-align: start; }
+  .cp-bfo__nav { display: flex; flex-direction: row; gap: 12px;
+                 justify-content: flex-end; }
+  .cp-bfo__btn { width: 48px; height: 48px; border-radius: 50%;
+                 display: inline-flex; align-items: center; justify-content: center;
+                 border: 1px solid #D0D5DD; background: #ffffff; color: #252525;
+                 cursor: pointer; transition: background 160ms ease-out,
+                 border-color 160ms ease-out, opacity 160ms ease-out; }
+  .cp-bfo__btn:hover:not(:disabled) { background: #EEF3FF; border-color: #155FFF;
+                                      color: #155FFF; }
+  .cp-bfo__btn:focus-visible { outline: 2px solid #155FFF; outline-offset: 3px; }
+  .cp-bfo__btn:disabled { opacity: 0.35; cursor: default; }
+  @media (prefers-reduced-motion: reduce) { .cp-bfo__btn { transition: none; } }
+  .cp-bfo__case { min-width: 0; display: flex; flex-direction: column;
+                  gap: 76px; }
+  .cp-bfo--pair .cp-bfo__art { width: 100%; }
+  .cp-bfo--pair .cp-bfo__poster { width: 100%; aspect-ratio: 2 / 1;
+                                  object-fit: cover; }
+  .cp-bfo__case--mars .cp-bfo__poster { object-position: 50% 62%; }
+  .cp-bfo--pair .cp-bfo__copy blockquote { max-width: none; font-size: 18px;
+                                           line-height: 30px; }
+  .cp-bfo--pair .cp-bfo__qm { width: 40px; height: 31px; }
   .cp-bfo__stat--b { left: 204px; }
   .cp-bfo__stat b { display: block; padding: 16px 16px 14px;
                     font-size: 34px; font-weight: 800; line-height: 36px;
@@ -1317,12 +1547,12 @@
                       gap: 10px; align-items: center; justify-content: center;
                       height: 52px; border-radius: 8px; background: #155FFF;
                       color: #ffffff; font-size: 16px; font-weight: 500; }
-    /* the header's pair, in the order it has them: the demo above the
-       trial, outlined against its fill. 12 between them rather than the
-       24 that sets the pair off from the list above. */
-    .cp-drawer__cta--ghost { margin-top: 24px; background: none;
+    /* the header's pair, in the order it has them: the demo filled, the
+       trial outlined under it. 12 between them rather than the 24 that
+       sets the pair off from the list above. */
+    .cp-drawer__cta--ghost { background: none;
                              border: 1px solid #D0D5DD; color: #252525; }
-    .cp-drawer__cta--ghost + .cp-drawer__cta { margin-top: 12px; }
+    .cp-drawer__cta + .cp-drawer__cta--ghost { margin-top: 12px; }
     [data-screen-label="Header"] > div { flex-direction: row !important; }
 
     /* ── Hero ────────────────────────────────────────────────────────── */
@@ -1518,9 +1748,31 @@
     .cp-steps__dots { padding: 14px 0 0 !important;
                       margin: 0 !important;
                       align-self: stretch !important; }
+    /* ── Case-study carousel ─────────────────────── */
+    .cp-cs4 { padding: 56px 0 56px !important; }
+    .cp-cs4__h { font-size: 28px !important; line-height: 36px !important;
+                 margin-bottom: 28px !important; }
+    .cp-cs4__track { width: 100% !important; max-width: none !important;
+                     padding: 0 20px 8px !important; scroll-padding-left: 20px;
+                     gap: 14px !important; }
+    .cp-cs4__card { flex-basis: 82% !important; text-align: left !important; }
+    .cp-cs4__stat, .cp-cs4__stat span { text-align: left !important; justify-content: flex-start !important; }
+    .cp-cs4__title { font-size: 18px !important; line-height: 25px !important; }
+    .cp-cs4__nav { gap: 18px !important; margin-top: 28px !important; }
+    .cp-cs4__btn { width: 44px !important; height: 44px !important; }
+    .cp-cs4__cta { margin-top: 32px !important; }
     /* ── Case study: Mars by GHC ────────────────── */
     .cp-bfo { flex-direction: column !important; gap: 60px !important;
               padding: 56px 20px 40px !important; }
+    .cp-bfo--pair { gap: 4px !important; }
+    /* out to the screen edge: .cp-page * caps widths at 100% with
+       !important, so the overrides need it too */
+    .cp-bfo__track { width: calc(100% + 40px) !important; max-width: none !important;
+                     margin: 0 -20px !important; padding: 16px 20px 56px !important;
+                     scroll-padding-left: 20px; gap: 20px; }
+    .cp-bfo__case { flex-basis: 86%; }
+    .cp-bfo__nav { justify-content: center; }
+    .cp-bfo__case { gap: 60px !important; }
     .cp-bfo__art { width: 100% !important; }
     .cp-bfo__poster { width: 100% !important; }
     /* two 172px cards need 362 of the 340 a phone has; they shrink and
@@ -1561,6 +1813,8 @@
       flex-wrap: wrap !important; justify-content: center !important;
       gap: 20px 24px !important; height: auto !important; }
     [data-screen-label="Integrations"] x-import { width: 100% !important; }
+    /* two marks a row: 2 x 150 + 24 sits inside the 350 column */
+    [data-screen-label="Integrations"] img { width: 150px !important; }
     /* the cells stretch to the line and their mark holders take height from
        the cell, so a wrapping row with height: auto collapsed every line to
        nothing. The cells get a height of their own instead. */
@@ -1628,7 +1882,8 @@
       padding: 32px 20px !important; }
 
     /* ── Languages ──────────────────────────────────────────────────── */
-    [data-screen-label="Languages"] { padding: 56px 20px !important; }
+    [data-screen-label="Languages"] { padding: 0 20px 48px !important; }
+    .cp-lang__line { font-size: 15px; line-height: 25px; }
     .cp-lang__row { width: 100% !important; display: flex;
                     flex-direction: column; align-items: center; }
     .cp-lang__inner { width: 100% !important; align-items: center !important;
@@ -1679,8 +1934,17 @@
                      height: 240px !important; }
     .cp-cse__inner { width: 100% !important; flex-direction: column !important;
                      padding: 44px 20px 48px !important; gap: 30px !important;
-                     align-items: stretch !important; }
+                     align-items: stretch !important; min-height: 0 !important; }
     .cp-cse__copy { flex: 1 1 auto !important; }
+    /* Savana and Urbanic read left-aligned on a phone, the way the
+       figures and the photo already sit */
+    .cp-cse--savana .cp-cse__copy, .cp-cse--urbanic .cp-cse__copy,
+    .cp-cse__results { text-align: left !important; align-items: flex-start !important; }
+    .cp-cse__h span { align-items: flex-start !important; text-align: left !important; }
+    .cp-cse__h i { line-height: 18px !important; }
+    .cp-cse__quote figcaption { justify-content: flex-start !important; text-align: left !important; }
+    .cp-cse__results li { align-items: flex-start !important; }
+    .cp-cse__results { max-width: none !important; }
     .cp-cse__mark { width: 168px !important; }
     /* 46px is 230 for $20,000 alone; the pair needs 302 of the 340 here */
     .cp-cse__h { gap: 18px !important; }
@@ -1729,6 +1993,12 @@
     .cp-gs__metrics { flex-direction: column !important; gap: 16px !important; }
     .cp-gs__m > span:first-child { justify-content: flex-start !important; }
     .cp-gs__tag { margin-left: auto; }
+    .cp-rto__bar { display: none !important; }
+    .cp-rc__val, .cp-rc__x { font-size: 28px !important; }
+    .cp-rc__tick { font-size: 24px !important; }
+    .cp-rto__table th, .cp-rto__table td { padding: 10px 8px; font-size: 12.5px; }
+    /* the counts go on a phone; the rates are the story and four columns fit */
+    .cp-rto__table tr > :nth-child(3), .cp-rto__table tr > :nth-child(5) { display: none; }
     /* ── The case-study heading ───────────────────── */
     /* ── Three cards to close on ────────────────────── */
     .cp-nt { padding: 44px 16px 52px !important; }
@@ -2051,8 +2321,8 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
       </nav>
       <div style="display: flex; flex-direction: row; gap: 16px; align-items: center; flex-shrink: 0;">
         <a href="https://dashboard.clickpost.in/" target="_blank" rel="noopener noreferrer" style="font-size: 14px; line-height: 20px; color: #252525; white-space: nowrap;">Log In</a>
-        <a href="#book-a-call" style="width: fit-content; height: 44px; border-radius: 4px; border: 1px solid #D0D5DD; display: flex; flex-direction: row; padding: 12px 16px; justify-content: center; align-items: center; font-size: 14px; font-weight: 500; line-height: 20px; color: #52525B; white-space: nowrap; transition: border-color 160ms ease-out, background 160ms ease-out;" style-hover="background: #F5F6F8; border-color: #98A2B3; color: #252525;">Book a demo</a>
-        <a href="https://apps.shopify.com/clickpost-order-edit-cancel" target="_blank" rel="noopener noreferrer" style="width: fit-content; height: 44px; border-radius: 4px; background: #155FFF; display: flex; flex-direction: row; gap: 6px; padding: 12px 16px; justify-content: center; align-items: center; font-size: 14px; font-weight: 500; line-height: 20px; color: #ffffff; white-space: nowrap; transition: background 160ms ease-out;" style-hover="background: #0A3FCC; color: #ffffff;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="flex-shrink: 0;"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"></path></svg>Start a free trial<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a href="https://apps.shopify.com/clickpost-order-edit-cancel" target="_blank" rel="noopener noreferrer" style="width: fit-content; height: 44px; border-radius: 4px; border: 1px solid #D0D5DD; display: flex; flex-direction: row; gap: 6px; padding: 12px 16px; justify-content: center; align-items: center; font-size: 14px; font-weight: 500; line-height: 20px; color: #52525B; white-space: nowrap; transition: border-color 160ms ease-out, background 160ms ease-out;" style-hover="background: #F5F6F8; border-color: #98A2B3; color: #252525;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"></path></svg>Start a free trial</a>
+        <a href="#book-a-call" style="width: fit-content; height: 44px; border-radius: 4px; background: #155FFF; display: flex; flex-direction: row; gap: 6px; padding: 12px 16px; justify-content: center; align-items: center; font-size: 14px; font-weight: 500; line-height: 20px; color: #ffffff; white-space: nowrap; transition: background 160ms ease-out;" style-hover="background: #0A3FCC; color: #ffffff;">Book a demo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
       </div>
       <button type="button" class="cp-burger" aria-label="Open menu" aria-expanded="{{ menuOpen }}" aria-controls="cp-menu" onClick="{{ openMenu }}">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
@@ -2084,8 +2354,8 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
       <button type="button" class="cp-drawer__row" onClick="{{ openPrice }}">Pricing</button>
       <a class="cp-drawer__row" href="https://www.clickpost.ai/customers" target="_blank" rel="noopener noreferrer">Customers</a>
       <a class="cp-drawer__row" href="https://dashboard.clickpost.in/" target="_blank" rel="noopener noreferrer">Log In</a>
-      <a class="cp-drawer__cta cp-drawer__cta--ghost" href="#book-a-call" onClick="{{ closeMenu }}">Book a demo</a>
-      <a class="cp-drawer__cta" href="https://apps.shopify.com/clickpost-order-edit-cancel" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="flex-shrink: 0;"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.101 0-3.164-1.309-3.164-1.309l.646-2.088s1.094.941 2.021.941c.6 0 .854-.481.854-.831 0-1.6-2.66-1.675-2.66-4.34 0-2.257 1.605-4.436 4.847-4.436 1.723 0 2.572.481 2.572.481l-.914 2.684-.758-.208zM14.419 1.045c.176 0 .358.061.538.174-1.324.622-2.746 2.192-3.347 5.327-.446.138-.88.271-1.286.394.359-1.219 1.294-4.181 3.048-5.633.176-.146.4-.262.66-.262h.387z" ></path></svg>Start a free trial</a>
+      <a class="cp-drawer__cta" href="#book-a-call" onClick="{{ closeMenu }}">Book a demo</a>
+      <a class="cp-drawer__cta cp-drawer__cta--ghost" href="https://apps.shopify.com/clickpost-order-edit-cancel" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.101 0-3.164-1.309-3.164-1.309l.646-2.088s1.094.941 2.021.941c.6 0 .854-.481.854-.831 0-1.6-2.66-1.675-2.66-4.34 0-2.257 1.605-4.436 4.847-4.436 1.723 0 2.572.481 2.572.481l-.914 2.684-.758-.208zM14.419 1.045c.176 0 .358.061.538.174-1.324.622-2.746 2.192-3.347 5.327-.446.138-.88.271-1.286.394.359-1.219 1.294-4.181 3.048-5.633.176-.146.4-.262.66-.262h.387z" ></path></svg>Start a free trial</a>
     </div>
   </div>
 
@@ -2098,7 +2368,8 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <p style="margin: 0; font-size: 20px; font-weight: 400; line-height: 30px; color: #454545;">Addresses, variant swaps, quantity, discount codes, cancellations - self serve edits before you ship.</p>
         </div>
         <div style="height: 48px; display: flex; flex-direction: row; gap: 16px; align-items: center; align-self: stretch; flex-wrap: wrap;">
-          <a href="https://apps.shopify.com/clickpost-order-edit-cancel" target="_blank" rel="noopener noreferrer" style="width: fit-content; height: 48px; border-radius: 4px; background: #155FFF; display: flex; flex-direction: row; gap: 9px; padding: 12px 22px; justify-content: center; align-items: center; font-size: 16px; font-weight: 600; line-height: 24px; color: #ffffff; white-space: nowrap; transition: background 160ms ease-out;" style-hover="background: #0A3FCC; color: #ffffff;"><svg width="19" height="19" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="flex-shrink: 0;"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"></path></svg>Start a trial</a>
+          <a href="#book-a-call" style="width: fit-content; height: 48px; border-radius: 4px; background: #155FFF; display: flex; flex-direction: row; gap: 9px; padding: 12px 22px; justify-content: center; align-items: center; font-size: 16px; font-weight: 600; line-height: 24px; color: #ffffff; white-space: nowrap; transition: background 160ms ease-out;" style-hover="background: #0A3FCC; color: #ffffff;">Book a demo<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          <a href="https://apps.shopify.com/clickpost-order-edit-cancel" target="_blank" rel="noopener noreferrer" style="width: fit-content; height: 48px; border-radius: 4px; border: 1px solid #D0D5DD; background: #ffffff; display: flex; flex-direction: row; gap: 9px; padding: 12px 22px; justify-content: center; align-items: center; font-size: 16px; font-weight: 600; line-height: 24px; color: #252525; white-space: nowrap; transition: border-color 160ms ease-out, background 160ms ease-out;" style-hover="background: #F5F6F8; border-color: #98A2B3; color: #252525;"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink: 0;"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"></path></svg>Start a trial</a>
           <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
             <svg width="21.28" height="24" viewBox="0 0 22 24" fill="none"><path d="M11 1.2 13.6 7.5 20.4 8l-5.2 4.4 1.6 6.6L11 15.4 5.2 19l1.6-6.6L1.6 8l6.8-.5z" fill="#FF492C"></path><path d="M11 15.4V1.2L8.4 7.5 1.6 8l5.2 4.4L5.2 19z" fill="#FF6B52"></path></svg>
             <div style="display: flex; flex-direction: row; gap: 6px; align-items: center;">
@@ -2119,28 +2390,80 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
   <!-- ── Trusted by ───────────────────────────────────── -->
   <section style="padding: 64px 112px; display: flex; flex-direction: column; align-items: center;" data-screen-label="Trusted by" aria-label="Brands working with us">
     <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; align-self: stretch;">
-      <span style="font-size: 26px; font-weight: 600; line-height: 34px; letter-spacing: -0.01em; color: #252525;">Trusted by Shopify brands worldwide</span>
-      <!-- BRANDSTRIP:START — generated by tools/build-brand-strip.py, do not edit by hand -->
+      <span style="font-size: 26px; font-weight: 600; line-height: 34px; letter-spacing: -0.01em; color: #252525;">Trusted by Shopify brands across India</span>
+      <!-- BRANDSTRIP:START — edited by hand: brands.json now feeds the case-study ring, not this strip -->
       <div class="cp-bs" style="align-self: stretch;">
         <div class="cp-bs__track" style="--cp-bs-count: 12;">
         <div class="cp-bs__item">
           <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/curlwarehouse.png" alt="Curl Warehouse"></span>
-            <span class="cp-bs__tier">7-figure brand</span>
+            <span class="cp-bs__mark"><img src="assets/customers/westside.png" alt="Westside Global"></span>
+            <span class="cp-bs__country">India</span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“This has reduced the number of emails we receive to update orders. It&#x27;s easy to use and set up, and the developers have been very receptive to changes.”</p>
-            <div class="cp-bs__who">Curl Warehouse<span class="cp-bs__where">Canada</span></div>
+            <p class="cp-bs__quote">“We just installed Clickpost a few days ago and honestly it&#x27;s been a very smooth experience. Setup was way easier than I expected and everything worked right out of the box. The order editing feature is exactly what we needed since customers always want to change something after checkout. Smit helped us get everything configured and answered our questions super fast.”</p>
+            <div class="cp-bs__who">Westside Global<span class="cp-bs__where">India</span></div>
           </div></div>
         </div>
         <div class="cp-bs__item">
           <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/mateina.png" alt="Mateina"></span>
-            <span class="cp-bs__tier">Andrew Huberman&#x27;s favourite</span>
+            <span class="cp-bs__mark"><img src="assets/customers/myborosil.png" alt="MyBorosil"></span>
+            <span class="cp-bs__country">India</span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“One of the best order editing apps available that actually works! I&#x27;ve tested about a dozen, and this was by far one of the best. Amazing team and support.”</p>
-            <div class="cp-bs__who">Mateina<span class="cp-bs__where">Canada</span></div>
+            <p class="cp-bs__quote">“Order editing app by clickpost is easy to install with a super responsive support team. It has reduced our support tickets. It has just made our life easier. Was very easy to setup on them. Loving it!”</p>
+            <div class="cp-bs__who">MyBorosil<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/wellbeingnutrition.png" alt="Wellbeing Nutrition"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Clickpost order editing has made our post purchase process so much better. Customers can now edit their orders without contacting support. Their upsells are a cherry on the top, and have increased our AOV. Real value for money, and absolutely great support from the team.”</p>
+            <div class="cp-bs__who">Wellbeing Nutrition<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
+            <span class="cp-bs__country">India</span>
+            <span class="cp-bs__tier">7-figure brand</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.”</p>
+            <div class="cp-bs__who">Mars By GHC<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/modomu.png" alt="Modomu"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which brought in a bit of extra revenue.”</p>
+            <div class="cp-bs__who">Modomu<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/hautesauce.png" alt="Haute Sauce"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Installed Clickpost recently and it works great. Customers can edit their orders and even add extra items, which is a nice bonus.”</p>
+            <div class="cp-bs__who">Haute Sauce<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/gharsoaps.png" alt="GHAR SOAPS"></span>
+            <span class="cp-bs__country">India</span>
+            <span class="cp-bs__tier">8-figure brand</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Clickpost been a great upgrade for our store. Customers can log in, check their info, and manage everything easily, which has made the whole experience feel smoother and more professional.”</p>
+            <div class="cp-bs__who">GHAR SOAPS<span class="cp-bs__where">India</span></div>
           </div></div>
         </div>
         <div class="cp-bs__item">
@@ -2148,7 +2471,7 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
             <span class="cp-bs__mark"><img src="assets/customers/renuebyscience.svg" alt="Renue By Science"></span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“The team at Clickpost are exceptional developers and great people. They listen to feedback and have built genuinely useful tools for Shopify stores.”</p>
+            <p class="cp-bs__quote">“Mohit and the team at ClickPost are exceptional developers and great people. They listen to feedback and have built genuinely useful tools for Shopify stores.”</p>
             <div class="cp-bs__who">Renue By Science<span class="cp-bs__where">USA</span></div>
           </div></div>
         </div>
@@ -2164,57 +2487,21 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </div>
         <div class="cp-bs__item">
           <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/modomu.png" alt="Modomu"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which brought in a bit of extra revenue.”</p>
-            <div class="cp-bs__who">Modomu<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/hautesauce.png" alt="Haute Sauce"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Installed Clickpost recently and it works great. Customers can edit their orders and even add extra items, which is a nice bonus.”</p>
-            <div class="cp-bs__who">Haute Sauce<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/westside.png" alt="Westside Global"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“We just installed Clickpost a few days ago and honestly it&#x27;s been a very smooth experience. Setup was way easier than I expected and everything worked right out of the box. The order editing feature is exactly what we needed since customers always want to change something after checkout. Smit helped us get everything configured and answered our questions super fast.”</p>
-            <div class="cp-bs__who">Westside Global<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/myborosil.png" alt="MyBorosil"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Order editing app by clickpost is easy to install with a super responsive support team. It has reduced our support tickets. It has just made our life easier. Was very easy to setup on them. Loving it!”</p>
-            <div class="cp-bs__who">MyBorosil<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/wellbeingnutrition.png" alt="Wellbeing Nutrition"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Clickpost order editing has made our post purchase process so much better. Customers can now edit their orders without contacting support. Their upsells are a cherry on the top, and have increased our AOV. Real value for money, and absolutely great support from the team.”</p>
-            <div class="cp-bs__who">Wellbeing Nutrition<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
+            <span class="cp-bs__mark"><img src="assets/customers/curlwarehouse.png" alt="Curl Warehouse"></span>
             <span class="cp-bs__tier">7-figure brand</span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.”</p>
-            <div class="cp-bs__who">Mars By GHC<span class="cp-bs__where">India</span></div>
+            <p class="cp-bs__quote">“This has reduced the number of emails we receive to update orders. It&#x27;s easy to use and set up, and the developers have been very receptive to changes.”</p>
+            <div class="cp-bs__who">Curl Warehouse<span class="cp-bs__where">Canada</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/mateina.png" alt="Mateina"></span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“One of the best order editing apps available that actually works! I&#x27;ve tested about a dozen, and this was by far one of the best. Amazing team and support.”</p>
+            <div class="cp-bs__who">Mateina<span class="cp-bs__where">Canada</span></div>
           </div></div>
         </div>
         <div class="cp-bs__item">
@@ -2227,34 +2514,76 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
             <div class="cp-bs__who">VanillaPura<span class="cp-bs__where">Utah, USA</span></div>
           </div></div>
         </div>
-        <div class="cp-bs__item">
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/westside.png" alt="Westside Global"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“We just installed Clickpost a few days ago and honestly it&#x27;s been a very smooth experience. Setup was way easier than I expected and everything worked right out of the box. The order editing feature is exactly what we needed since customers always want to change something after checkout. Smit helped us get everything configured and answered our questions super fast.”</p>
+            <div class="cp-bs__who">Westside Global<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/myborosil.png" alt="MyBorosil"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Order editing app by clickpost is easy to install with a super responsive support team. It has reduced our support tickets. It has just made our life easier. Was very easy to setup on them. Loving it!”</p>
+            <div class="cp-bs__who">MyBorosil<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/wellbeingnutrition.png" alt="Wellbeing Nutrition"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Clickpost order editing has made our post purchase process so much better. Customers can now edit their orders without contacting support. Their upsells are a cherry on the top, and have increased our AOV. Real value for money, and absolutely great support from the team.”</p>
+            <div class="cp-bs__who">Wellbeing Nutrition<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
+            <span class="cp-bs__country">India</span>
+            <span class="cp-bs__tier">7-figure brand</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.”</p>
+            <div class="cp-bs__who">Mars By GHC<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/modomu.png" alt="Modomu"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which brought in a bit of extra revenue.”</p>
+            <div class="cp-bs__who">Modomu<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/hautesauce.png" alt="Haute Sauce"></span>
+            <span class="cp-bs__country">India</span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“Installed Clickpost recently and it works great. Customers can edit their orders and even add extra items, which is a nice bonus.”</p>
+            <div class="cp-bs__who">Haute Sauce<span class="cp-bs__where">India</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
           <div class="cp-bs__brand">
             <span class="cp-bs__mark"><img src="assets/customers/gharsoaps.png" alt="GHAR SOAPS"></span>
+            <span class="cp-bs__country">India</span>
             <span class="cp-bs__tier">8-figure brand</span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
             <p class="cp-bs__quote">“Clickpost been a great upgrade for our store. Customers can log in, check their info, and manage everything easily, which has made the whole experience feel smoother and more professional.”</p>
-            <div class="cp-bs__who">GHAR SOAPS<span class="cp-bs__where">UAE</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/curlwarehouse.png" alt="Curl Warehouse"></span>
-            <span class="cp-bs__tier">7-figure brand</span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“This has reduced the number of emails we receive to update orders. It&#x27;s easy to use and set up, and the developers have been very receptive to changes.”</p>
-            <div class="cp-bs__who">Curl Warehouse<span class="cp-bs__where">Canada</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/mateina.png" alt="Mateina"></span>
-            <span class="cp-bs__tier">Andrew Huberman&#x27;s favourite</span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“One of the best order editing apps available that actually works! I&#x27;ve tested about a dozen, and this was by far one of the best. Amazing team and support.”</p>
-            <div class="cp-bs__who">Mateina<span class="cp-bs__where">Canada</span></div>
+            <div class="cp-bs__who">GHAR SOAPS<span class="cp-bs__where">India</span></div>
           </div></div>
         </div>
         <div class="cp-bs__item" aria-hidden="true">
@@ -2262,7 +2591,7 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
             <span class="cp-bs__mark"><img src="assets/customers/renuebyscience.svg" alt="Renue By Science"></span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“The team at Clickpost are exceptional developers and great people. They listen to feedback and have built genuinely useful tools for Shopify stores.”</p>
+            <p class="cp-bs__quote">“Mohit and the team at ClickPost are exceptional developers and great people. They listen to feedback and have built genuinely useful tools for Shopify stores.”</p>
             <div class="cp-bs__who">Renue By Science<span class="cp-bs__where">USA</span></div>
           </div></div>
         </div>
@@ -2278,57 +2607,21 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </div>
         <div class="cp-bs__item" aria-hidden="true">
           <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/modomu.png" alt="Modomu"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which brought in a bit of extra revenue.”</p>
-            <div class="cp-bs__who">Modomu<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/hautesauce.png" alt="Haute Sauce"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Installed Clickpost recently and it works great. Customers can edit their orders and even add extra items, which is a nice bonus.”</p>
-            <div class="cp-bs__who">Haute Sauce<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/westside.png" alt="Westside Global"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“We just installed Clickpost a few days ago and honestly it&#x27;s been a very smooth experience. Setup was way easier than I expected and everything worked right out of the box. The order editing feature is exactly what we needed since customers always want to change something after checkout. Smit helped us get everything configured and answered our questions super fast.”</p>
-            <div class="cp-bs__who">Westside Global<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/myborosil.png" alt="MyBorosil"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Order editing app by clickpost is easy to install with a super responsive support team. It has reduced our support tickets. It has just made our life easier. Was very easy to setup on them. Loving it!”</p>
-            <div class="cp-bs__who">MyBorosil<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/wellbeingnutrition.png" alt="Wellbeing Nutrition"></span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Clickpost order editing has made our post purchase process so much better. Customers can now edit their orders without contacting support. Their upsells are a cherry on the top, and have increased our AOV. Real value for money, and absolutely great support from the team.”</p>
-            <div class="cp-bs__who">Wellbeing Nutrition<span class="cp-bs__where">India</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
+            <span class="cp-bs__mark"><img src="assets/customers/curlwarehouse.png" alt="Curl Warehouse"></span>
             <span class="cp-bs__tier">7-figure brand</span>
           </div>
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.”</p>
-            <div class="cp-bs__who">Mars By GHC<span class="cp-bs__where">India</span></div>
+            <p class="cp-bs__quote">“This has reduced the number of emails we receive to update orders. It&#x27;s easy to use and set up, and the developers have been very receptive to changes.”</p>
+            <div class="cp-bs__who">Curl Warehouse<span class="cp-bs__where">Canada</span></div>
+          </div></div>
+        </div>
+        <div class="cp-bs__item" aria-hidden="true">
+          <div class="cp-bs__brand">
+            <span class="cp-bs__mark"><img src="assets/customers/mateina.png" alt="Mateina"></span>
+          </div>
+          <div class="cp-bs__panel"><div class="cp-bs__panelin">
+            <p class="cp-bs__quote">“One of the best order editing apps available that actually works! I&#x27;ve tested about a dozen, and this was by far one of the best. Amazing team and support.”</p>
+            <div class="cp-bs__who">Mateina<span class="cp-bs__where">Canada</span></div>
           </div></div>
         </div>
         <div class="cp-bs__item" aria-hidden="true">
@@ -2339,16 +2632,6 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <div class="cp-bs__panel"><div class="cp-bs__panelin">
             <p class="cp-bs__quote">“Great experience and fantastic support from the ClickPost team with my questions. Our top customer service requests are for order edits, so this immediately cut support tickets making it easy to quantify the ROI. A lot of customization features and various upsell tools are included in the app that I can implement to increase AOV as well. I highly recommend it.”</p>
             <div class="cp-bs__who">VanillaPura<span class="cp-bs__where">Utah, USA</span></div>
-          </div></div>
-        </div>
-        <div class="cp-bs__item" aria-hidden="true">
-          <div class="cp-bs__brand">
-            <span class="cp-bs__mark"><img src="assets/customers/gharsoaps.png" alt="GHAR SOAPS"></span>
-            <span class="cp-bs__tier">8-figure brand</span>
-          </div>
-          <div class="cp-bs__panel"><div class="cp-bs__panelin">
-            <p class="cp-bs__quote">“Clickpost been a great upgrade for our store. Customers can log in, check their info, and manage everything easily, which has made the whole experience feel smoother and more professional.”</p>
-            <div class="cp-bs__who">GHAR SOAPS<span class="cp-bs__where">UAE</span></div>
           </div></div>
         </div>
         </div>
@@ -2454,24 +2737,24 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
             <div style="background: #ffffff; border: 1px solid #E8EAEF; border-radius: 13px; padding: 11px 14px; display: flex; flex-direction: column;">
               <span style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 700; color: #111827;">Unlock free shipping by adding best sellers.</span>
               <span style="height: 7px; border-radius: 9999px; background: #E4E6EB; margin-top: 10px; display: block; overflow: hidden;"><span style="display: block; width: 78%; height: 100%; border-radius: 9999px; background: #111827;"></span></span>
-              <span style="font-family: Inter, sans-serif; font-size: 11px; color: #6B7280; margin-top: 8px;"><b style="color: #111827;">€20</b> away from free shipping.</span>
+              <span style="font-family: Inter, sans-serif; font-size: 11px; color: #6B7280; margin-top: 8px;"><b style="color: #111827;">₹499</b> away from free shipping.</span>
               <span style="display: flex; flex-direction: row; gap: 8px; margin-top: 9px; align-items: stretch;">
               <span style="flex: 1; display: flex; flex-direction: column; gap: 5px; padding: 6px; border: 1px solid #EDEFF3; border-radius: 9px; background: #ffffff; min-width: 0;">
                 <img src="assets/upsell/valentine-crush.jpg" alt="" width="320" height="400" style="width: 100%; height: 74px; object-fit: cover; border-radius: 7px; display: block;">
-                <span style="font-family: Inter, sans-serif; font-size: 9.5px; line-height: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Valentine Crush Pediküre Soft Gel Press Ons</span>
-                <span style="font-family: Inter, sans-serif; font-size: 10.5px; font-weight: 700; color: #111827;">€20</span>
+                <span style="font-family: Inter, sans-serif; font-size: 9.5px; line-height: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Valentine Crush Pedicure Soft Gel Press Ons</span>
+                <span style="font-family: Inter, sans-serif; font-size: 10.5px; font-weight: 700; color: #111827;">₹499</span>
                 <span style="height: 21px; border-radius: 7px; background: #111827; color: #ffffff; display: flex; justify-content: center; align-items: center; font-family: Inter, sans-serif; font-size: 9.5px; font-weight: 600;">Add to order</span>
               </span>
               <span style="flex: 1; display: flex; flex-direction: column; gap: 5px; padding: 6px; border: 1px solid #EDEFF3; border-radius: 9px; background: #ffffff; min-width: 0;">
                 <img src="assets/upsell/sunset-coral.jpg" alt="" width="320" height="400" style="width: 100%; height: 74px; object-fit: cover; border-radius: 7px; display: block;">
-                <span style="font-family: Inter, sans-serif; font-size: 9.5px; line-height: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Sunset Coral Pediküre Soft Gel Press Ons</span>
-                <span style="font-family: Inter, sans-serif; font-size: 10.5px; font-weight: 700; color: #111827;">€20</span>
+                <span style="font-family: Inter, sans-serif; font-size: 9.5px; line-height: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Sunset Coral Pedicure Soft Gel Press Ons</span>
+                <span style="font-family: Inter, sans-serif; font-size: 10.5px; font-weight: 700; color: #111827;">₹499</span>
                 <span style="height: 21px; border-radius: 7px; background: #111827; color: #ffffff; display: flex; justify-content: center; align-items: center; font-family: Inter, sans-serif; font-size: 9.5px; font-weight: 600;">Add to order</span>
               </span>
               <span style="flex: 1; display: flex; flex-direction: column; gap: 5px; padding: 6px; border: 1px solid #EDEFF3; border-radius: 9px; background: #ffffff; min-width: 0;">
                 <img src="assets/upsell/snow-white.jpg" alt="" width="320" height="400" style="width: 100%; height: 74px; object-fit: cover; border-radius: 7px; display: block;">
-                <span style="font-family: Inter, sans-serif; font-size: 9.5px; line-height: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Snow White Pediküre Soft Gel Press Ons</span>
-                <span style="font-family: Inter, sans-serif; font-size: 10.5px; font-weight: 700; color: #111827;">€20</span>
+                <span style="font-family: Inter, sans-serif; font-size: 9.5px; line-height: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Snow White Pedicure Soft Gel Press Ons</span>
+                <span style="font-family: Inter, sans-serif; font-size: 10.5px; font-weight: 700; color: #111827;">₹499</span>
                 <span style="height: 21px; border-radius: 7px; background: #111827; color: #ffffff; display: flex; justify-content: center; align-items: center; font-family: Inter, sans-serif; font-size: 9.5px; font-weight: 600;">Add to order</span>
               </span>
               </span>
@@ -2484,9 +2767,9 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
                 </span>
                 <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0;">
                   <span style="font-family: Inter, sans-serif; font-size: 11px; line-height: 15px; color: #111827;">Love Paris Short Round Mani &amp; Pedi Set — Soft Gel Press Ons</span>
-                  <span style="display: flex; flex-direction: row; gap: 7px; align-items: baseline;"><span style="font-family: Inter, sans-serif; font-size: 10.5px; color: #9AA1AC; text-decoration: line-through;">€40</span><span style="font-family: Inter, sans-serif; font-size: 12.5px; font-weight: 700; color: #067647;">€20</span></span>
+                  <span style="display: flex; flex-direction: row; gap: 7px; align-items: baseline;"><span style="font-family: Inter, sans-serif; font-size: 10.5px; color: #9AA1AC; text-decoration: line-through;">₹999</span><span style="font-family: Inter, sans-serif; font-size: 12.5px; font-weight: 700; color: #067647;">₹499</span></span>
                 </span>
-                <span style="display: flex; flex-direction: row; gap: 9px; align-items: center; flex-shrink: 0;"><span style="display: flex; flex-direction: row; gap: 9px; align-items: center; height: 26px; padding: 0 10px; border-radius: 9999px; border: 1px solid #E1E4E8; font-family: Inter, sans-serif; font-size: 11px; color: #475467;">−<b style="color: #111827;">1</b>+</span><span style="height: 28px; padding: 0 14px; border-radius: 9999px; background: #111827; color: #ffffff; display: flex; align-items: center; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; white-space: nowrap;">Add · €20</span></span>
+                <span style="display: flex; flex-direction: row; gap: 9px; align-items: center; flex-shrink: 0;"><span style="display: flex; flex-direction: row; gap: 9px; align-items: center; height: 26px; padding: 0 10px; border-radius: 9999px; border: 1px solid #E1E4E8; font-family: Inter, sans-serif; font-size: 11px; color: #475467;">−<b style="color: #111827;">1</b>+</span><span style="height: 28px; padding: 0 14px; border-radius: 9999px; background: #111827; color: #ffffff; display: flex; align-items: center; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; white-space: nowrap;">Add · ₹499</span></span>
               </span>
             </div>
           </div>
@@ -2524,22 +2807,71 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
   <!-- ── Built for store operations + Used by ────────
        One wrapper, one gradient: the two run together with no seam. -->
   <div class="cp-blend">
-  <section class="cp-bfo" data-screen-label="Built for store ops">
-    <figure class="cp-bfo__art">
-      <img class="cp-bfo__poster" src="assets/case-study/marsbyghc-poster.webp" alt="Mars by GHC supplements on a poolside tray" width="700" height="400" loading="lazy">
-      <div class="cp-bfo__stat cp-bfo__stat--a">
-        <b>$18,551</b><i>in upsell revenue</i>
+  <!-- Case studies, a sideways row on a dark band: the brand's mark,
+       a tall photo with the headline figure along its foot, and the
+       result in a line under it. Figures from the merchants' reviews and
+       the Sales Resources one-pagers. -->
+  <section class="cp-cs4" data-screen-label="Built for store ops" aria-labelledby="cp-cs4-h">
+    <h2 class="cp-cs4__h" id="cp-cs4-h">How Indian brands run order editing</h2>
+    <div class="cp-cs4__track" tabindex="0" role="region" aria-label="Case studies, scrolls sideways">
+        <article class="cp-cs4__card">
+          <img class="cp-cs4__logo" src="assets/case-study/sotrue-white.png" alt="SoTrue" width="207" height="48">
+          <div class="cp-cs4__media">
+            <img class="cp-cs4__img" src="assets/case-study/sotrue-portrait.webp" alt="A SoTrue model holding a tube of SoTrue glow cream to her face" width="800" height="955" loading="lazy" style="object-position: 50% 30%;">
+            <div class="cp-cs4__stat"><b>33%</b><span>fewer RTOs</span></div>
+          </div>
+          <h3 class="cp-cs4__title">RTO from 30.06% down to 20.01% in two months</h3>
+          <p class="cp-cs4__meta">Indian beauty brand, ~63,000 shipments a month</p>
+        </article>
+        <article class="cp-cs4__card">
+          <img class="cp-cs4__logo cp-cs4__logo--dark" src="assets/customers/marsbyghc.png" alt="Mars by GHC" width="186" height="44">
+          <div class="cp-cs4__media">
+            <img class="cp-cs4__img" src="assets/case-study/marsbyghc-poster.webp" alt="Mars by GHC supplements on a poolside tray" width="700" height="400" loading="lazy" style="object-position: 50% 60%;">
+            <div class="cp-cs4__stat"><b>$18,551</b><span>in upsell revenue</span></div>
+          </div>
+          <h3 class="cp-cs4__title">8,211 orders edited, and upsells as a solid bonus</h3>
+          <p class="cp-cs4__meta">7-figure supplements brand</p>
+        </article>
+        <article class="cp-cs4__card">
+          <img class="cp-cs4__logo cp-cs4__logo--dark" src="assets/customers/bananaclub.png" alt="Banana Club" width="345" height="42">
+          <div class="cp-cs4__media">
+            <img class="cp-cs4__img" src="assets/case-study/bananaclub-portrait.webp" alt="Banana Club&rsquo;s Wanderer campaign: two men climbing over rocks" width="800" height="1119" loading="lazy" style="object-position: 50% 30%;">
+            <div class="cp-cs4__stat"><b>7%</b><span>of orders edited every day</span></div>
+          </div>
+          <h3 class="cp-cs4__title">Every edit is a ticket, a mis-shipment or a lost sale avoided</h3>
+          <p class="cp-cs4__meta">Indian fashion brand</p>
+        </article>
+        <article class="cp-cs4__card">
+          <img class="cp-cs4__logo" src="assets/case-study/savana-white.png" alt="Savana" width="520" height="87">
+          <div class="cp-cs4__media">
+            <img class="cp-cs4__img" src="assets/case-study/savana-hero.webp" alt="A Savana model in a green floral dress on a picnic blanket" width="825" height="1100" loading="lazy" style="object-position: 50% 40%;">
+            <div class="cp-cs4__stat"><b>25%</b><span>support queries self-served</span></div>
+          </div>
+          <h3 class="cp-cs4__title">Address and item edits off the queue, and returns CSAT up</h3>
+          <p class="cp-cs4__meta">Gen Z fashion, 18L+ orders a month</p>
+        </article>
+        <article class="cp-cs4__card">
+          <img class="cp-cs4__logo" src="assets/case-study/urbanic-white.png" alt="Urbanic" width="520" height="130">
+          <div class="cp-cs4__media">
+            <img class="cp-cs4__img" src="assets/case-study/urbanic-hero.webp" alt="Four Urbanic models in bright summer outfits, laughing" width="1100" height="1100" loading="lazy" style="object-position: 60% 40%;">
+            <div class="cp-cs4__stat"><b>20&ndash;25%</b><span>fewer support queries</span></div>
+          </div>
+          <h3 class="cp-cs4__title">Customers fix their own address or item, so the team is off that queue</h3>
+          <p class="cp-cs4__meta">Digital-first fashion brand</p>
+        </article>
+    </div>
+    <div class="cp-cs4__nav">
+      <button type="button" class="cp-cs4__btn" data-dir="-1" aria-label="Previous case study" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+      <div class="cp-cs4__dots">
+          <button type="button" class="cp-cs4__dot" data-i="0" aria-label="Case study 1 of 5" aria-current="true"></button>
+          <button type="button" class="cp-cs4__dot" data-i="1" aria-label="Case study 2 of 5"></button>
+          <button type="button" class="cp-cs4__dot" data-i="2" aria-label="Case study 3 of 5"></button>
+          <button type="button" class="cp-cs4__dot" data-i="3" aria-label="Case study 4 of 5"></button>
+          <button type="button" class="cp-cs4__dot" data-i="4" aria-label="Case study 5 of 5"></button>
       </div>
-      <div class="cp-bfo__stat cp-bfo__stat--b">
-        <b>8,211</b><i>orders edited</i>
-      </div>
-    </figure>
-
-    <figure class="cp-bfo__copy"><svg class="cp-bfo__qm" width="52" height="40" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>
-      <blockquote>We&rsquo;ve been using Clickpost and it&rsquo;s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything&rsquo;s been running smoothly, and support has been great too &mdash; the team was quick to respond and got us up and running fast.</blockquote>
-      <figcaption><img src="assets/customers/marsbyghc.png" alt="Mars by GHC" width="148" height="46"><span class="cp-bfo__who"><i>7-figure brand &middot; January 2026</i></span></figcaption>
-      <a class="cp-bfo__more" href="#"><span>See how it works</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
-    </figure>
+      <button type="button" class="cp-cs4__btn" data-dir="1" aria-label="Next case study"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+    </div>
+    <a class="cp-cs4__cta" href="#book-a-call">Book a demo<svg width="18" height="16" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
   </section>
 
   <!-- ── Used by ──────────────────────────────────────── -->
@@ -2568,11 +2900,11 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
       <div class="cp-rw__track cp-rw__track--left">
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">One of the best order editing apps available that actually works! I&#x27;ve tested about a dozen, and this by far was one of the best. Amazing team and support as well. Highly recommended!</blockquote>
+          <blockquote class="cp-rw__text">Nice little app. Clickpost made it easy for customers to edit orders without contacting us all the time. Setup was quick, and Mohit was super helpful when we had a small issue. Solid support and does the job well.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/mateina.png" alt="Mateina"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">May 19, 2026</span><span class="cp-rw__country">Canada</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/wellwith.png" alt="Wellwith"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 30, 2026</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -2582,24 +2914,6 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <figcaption class="cp-rw__foot">
             <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/renuebyscience.svg" alt="Renue By Science"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">March 10, 2026</span><span class="cp-rw__country">United States</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">January 8, 2026</span><span class="cp-rw__country">United States</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Great tool. Easy to install and use. Really easy to quantify the value: Each time an order is edited is one call/email that I didn&#x27;t have to manage. The customer service team is also really good, fast and responsive.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/fulton365.png" alt="Fulton365"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">September 15, 2025</span><span class="cp-rw__country">United States</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -2649,38 +2963,29 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which actually brought in a bit of extra revenue without much effort. Setup was pretty straightforward, and when I got stuck, Smit jumped in and helped quickly. Loving it so far.</blockquote>
+          <blockquote class="cp-rw__text">We’ve had a great experience using the ClickPost Order Editing app. It allows customers to easily update addresses, change sizes, or modify orders post-purchase, which has significantly reduced our support queries. Support team is responsive and helpful whenever needed.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/modomu.png" alt="Modomu"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 28, 2026</span><span class="cp-rw__country">India</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Clean and simple app, no unnecessary complexity. Helps customers manage their orders themselves, which has saved us a lot of time daily.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/lovelang.png" alt="lovelang"></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/muffynn.png" alt="Muffynn"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">good app , it helps the clients to identify the data where customer modified the details of orders. also helps the customers edit the data on their end for smoother operations. it helps the organization to save the support cost and time.</blockquote>
+          <blockquote class="cp-rw__text">Really happy with how simple and effective this is. It’s reduced a lot of manual work and made the whole process feel more seamless.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/honeyveda.png" alt="HoneyVeda"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/buysohi.png" alt="buysohi"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Been using this order editing app for a few weeks now and it&#x27;s been pretty smooth. The main thing I like is how easy it is for customers to make changes themselves instead of emailing us every time. Mohit from the team was super quick to respond when I had a small issue during setup, got it fixed in no time. Definitely worth it</blockquote>
+          <blockquote class="cp-rw__text">Simple, does exactly what we needed. Customers can fix their own orders without reaching out, and it’s honestly saved our team a lot of time.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Pinacolada</span></span></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 27, 2026</span></span>
+            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Samoh International</span></span></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 30, 2026</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -2784,20 +3089,11 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We were looking for a way to offer basic order changes without complicating our process. This app nailed it. Clean interface, easy for customers, and fits right into our workflow</blockquote>
+          <blockquote class="cp-rw__text">This app does exactly what it promises. We&#x27;ve been able to reduce customer complaints by allowing easy order edits and cancellations. The setup was smooth, and their support team was quick to respond when we had questions. Definitely recommend it if you&#x27;re looking to improve post-purchase experience.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sammvaad.png" alt="Sammvaad"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">July 16, 2025</span><span class="cp-rw__country">India</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">ClickPost’s Order Editing &amp; Cancel tool has been a game-changer for Sudathi. With alot of of our support tickets related to order edits, it helped our customers to self-edit addresses, variants, and even cancel orders before shipping. It drastically reduced support load, and improved customer satisfaction. A must-have tool for brands focused on delivering smooth, scalable customer experiences.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sudathi.png" alt="Sudathi"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">June 30, 2025</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/italian-colony.png" alt="Italian Colony"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">July 15, 2025</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -2811,29 +3107,47 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Really helped us quickly to fix all issues</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/doonails.svg" alt="Doonails"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 6, 2026</span><span class="cp-rw__country">Cyprus</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Works as described. I set an order editing window when customers can change/edit their own orders. They like it because it&#x27;s fast and easy and I like it because it lowers my support tickets. Easily one of the best apps I have because it&#x27;s easy to use and it gives both me and my customers what I want. It&#x27;s a win/win app. The developers are always adding new features too, like upselling, that I appreciate. The more I can do within 1 app so I don&#x27;t have to have a ton of apps, the better. I highly recommend.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/shred-finger-boards.png" alt="Shred Finger Boards"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">September 22, 2025</span><span class="cp-rw__country">United States</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Great experience and fantastic support from the ClickPost team with my questions. Our top customer service requests are for order edits, so this immediately cut support tickets making it easy to quantify the ROI. A lot of customization features and various upsell tools are included in the app that I can implement to increase AOV as well. I highly recommend it.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/vanillapura.png" alt="VanillaPura"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">August 27, 2025</span><span class="cp-rw__country">United States</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Nice little app. Clickpost made it easy for customers to edit orders without contacting us all the time. Setup was quick, and Mohit was super helpful when we had a small issue. Solid support and does the job well.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/wellwith.png" alt="Wellwith"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 30, 2026</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
           <blockquote class="cp-rw__text">Mohit and the team at ClickPost are an exceptional team of developers and nice people to boot. They listen to feedback for improvement and new features, and have built genuinely useful tools for Shopify stores.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
             <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/renuebyscience.svg" alt="Renue By Science"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">March 10, 2026</span><span class="cp-rw__country">United States</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">January 8, 2026</span><span class="cp-rw__country">United States</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Great tool. Easy to install and use. Really easy to quantify the value: Each time an order is edited is one call/email that I didn&#x27;t have to manage. The customer service team is also really good, fast and responsive.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/fulton365.png" alt="Fulton365"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">September 15, 2025</span><span class="cp-rw__country">United States</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -2883,38 +3197,29 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which actually brought in a bit of extra revenue without much effort. Setup was pretty straightforward, and when I got stuck, Smit jumped in and helped quickly. Loving it so far.</blockquote>
+          <blockquote class="cp-rw__text">We’ve had a great experience using the ClickPost Order Editing app. It allows customers to easily update addresses, change sizes, or modify orders post-purchase, which has significantly reduced our support queries. Support team is responsive and helpful whenever needed.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/modomu.png" alt="Modomu"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 28, 2026</span><span class="cp-rw__country">India</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Clean and simple app, no unnecessary complexity. Helps customers manage their orders themselves, which has saved us a lot of time daily.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/lovelang.png" alt="lovelang"></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/muffynn.png" alt="Muffynn"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">good app , it helps the clients to identify the data where customer modified the details of orders. also helps the customers edit the data on their end for smoother operations. it helps the organization to save the support cost and time.</blockquote>
+          <blockquote class="cp-rw__text">Really happy with how simple and effective this is. It’s reduced a lot of manual work and made the whole process feel more seamless.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/honeyveda.png" alt="HoneyVeda"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/buysohi.png" alt="buysohi"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Been using this order editing app for a few weeks now and it&#x27;s been pretty smooth. The main thing I like is how easy it is for customers to make changes themselves instead of emailing us every time. Mohit from the team was super quick to respond when I had a small issue during setup, got it fixed in no time. Definitely worth it</blockquote>
+          <blockquote class="cp-rw__text">Simple, does exactly what we needed. Customers can fix their own orders without reaching out, and it’s honestly saved our team a lot of time.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Pinacolada</span></span></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 27, 2026</span></span>
+            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Samoh International</span></span></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 30, 2026</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -3018,20 +3323,47 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We were looking for a way to offer basic order changes without complicating our process. This app nailed it. Clean interface, easy for customers, and fits right into our workflow</blockquote>
+          <blockquote class="cp-rw__text">This app does exactly what it promises. We&#x27;ve been able to reduce customer complaints by allowing easy order edits and cancellations. The setup was smooth, and their support team was quick to respond when we had questions. Definitely recommend it if you&#x27;re looking to improve post-purchase experience.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sammvaad.png" alt="Sammvaad"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">July 16, 2025</span><span class="cp-rw__country">India</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/italian-colony.png" alt="Italian Colony"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">July 15, 2025</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">ClickPost’s Order Editing &amp; Cancel tool has been a game-changer for Sudathi. With alot of of our support tickets related to order edits, it helped our customers to self-edit addresses, variants, and even cancel orders before shipping. It drastically reduced support load, and improved customer satisfaction. A must-have tool for brands focused on delivering smooth, scalable customer experiences.</blockquote>
+          <blockquote class="cp-rw__text">One of the best order editing apps available that actually works! I&#x27;ve tested about a dozen, and this by far was one of the best. Amazing team and support as well. Highly recommended!</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sudathi.png" alt="Sudathi"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">June 30, 2025</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/mateina.png" alt="Mateina"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">May 19, 2026</span><span class="cp-rw__country">Canada</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Really helped us quickly to fix all issues</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/doonails.svg" alt="Doonails"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 6, 2026</span><span class="cp-rw__country">Cyprus</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Works as described. I set an order editing window when customers can change/edit their own orders. They like it because it&#x27;s fast and easy and I like it because it lowers my support tickets. Easily one of the best apps I have because it&#x27;s easy to use and it gives both me and my customers what I want. It&#x27;s a win/win app. The developers are always adding new features too, like upselling, that I appreciate. The more I can do within 1 app so I don&#x27;t have to have a ton of apps, the better. I highly recommend.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/shred-finger-boards.png" alt="Shred Finger Boards"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">September 22, 2025</span><span class="cp-rw__country">United States</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Great experience and fantastic support from the ClickPost team with my questions. Our top customer service requests are for order edits, so this immediately cut support tickets making it easy to quantify the ROI. A lot of customization features and various upsell tools are included in the app that I can implement to increase AOV as well. I highly recommend it.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/vanillapura.png" alt="VanillaPura"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">August 27, 2025</span><span class="cp-rw__country">United States</span></span>
           </figcaption>
         </figure>
       </div>
@@ -3040,38 +3372,20 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
       <div class="cp-rw__track cp-rw__track--right">
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">This has been reducing the number of emails we receive to update orders. It&#x27;s easy to use and set up and the developers have been very receptive to changes and suggestions and quick to respond to emails.</blockquote>
+          <blockquote class="cp-rw__text">Been using this order editing app for a few weeks now and it&#x27;s been pretty smooth. The main thing I like is how easy it is for customers to make changes themselves instead of emailing us every time. Mohit from the team was super quick to respond when I had a small issue during setup, got it fixed in no time. Definitely worth it</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/curlwarehouse.png" alt="Curl Warehouse"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 19, 2026</span><span class="cp-rw__country">Canada</span></span>
+            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Pinacolada</span></span></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 27, 2026</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Really helped us quickly to fix all issues</blockquote>
+          <blockquote class="cp-rw__text">We always wanted to give customers more flexibility after placing an order. This app delivered exactly that. Very intuitive and doesn’t affect our existing workflow. On point and instant support by Smit and Mohit</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/doonails.svg" alt="Doonails"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 6, 2026</span><span class="cp-rw__country">Cyprus</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Works as described. I set an order editing window when customers can change/edit their own orders. They like it because it&#x27;s fast and easy and I like it because it lowers my support tickets. Easily one of the best apps I have because it&#x27;s easy to use and it gives both me and my customers what I want. It&#x27;s a win/win app. The developers are always adding new features too, like upselling, that I appreciate. The more I can do within 1 app so I don&#x27;t have to have a ton of apps, the better. I highly recommend.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/shred-finger-boards.png" alt="Shred Finger Boards"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">September 22, 2025</span><span class="cp-rw__country">United States</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Great experience and fantastic support from the ClickPost team with my questions. Our top customer service requests are for order edits, so this immediately cut support tickets making it easy to quantify the ROI. A lot of customization features and various upsell tools are included in the app that I can implement to increase AOV as well. I highly recommend it.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/vanillapura.png" alt="VanillaPura"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">August 27, 2025</span><span class="cp-rw__country">United States</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/rijac.png" alt="RIJAC"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">July 16, 2025</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -3112,38 +3426,29 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Nice little app. Clickpost made it easy for customers to edit orders without contacting us all the time. Setup was quick, and Mohit was super helpful when we had a small issue. Solid support and does the job well.</blockquote>
+          <blockquote class="cp-rw__text">Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which actually brought in a bit of extra revenue without much effort. Setup was pretty straightforward, and when I got stuck, Smit jumped in and helped quickly. Loving it so far.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/wellwith.png" alt="Wellwith"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 30, 2026</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/modomu.png" alt="Modomu"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 28, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We’ve had a great experience using the ClickPost Order Editing app. It allows customers to easily update addresses, change sizes, or modify orders post-purchase, which has significantly reduced our support queries. Support team is responsive and helpful whenever needed.</blockquote>
+          <blockquote class="cp-rw__text">Clean and simple app, no unnecessary complexity. Helps customers manage their orders themselves, which has saved us a lot of time daily.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/muffynn.png" alt="Muffynn"></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/lovelang.png" alt="lovelang"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Really happy with how simple and effective this is. It’s reduced a lot of manual work and made the whole process feel more seamless.</blockquote>
+          <blockquote class="cp-rw__text">good app , it helps the clients to identify the data where customer modified the details of orders. also helps the customers edit the data on their end for smoother operations. it helps the organization to save the support cost and time.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/buysohi.png" alt="buysohi"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Simple, does exactly what we needed. Customers can fix their own orders without reaching out, and it’s honestly saved our team a lot of time.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Samoh International</span></span></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 30, 2026</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/honeyveda.png" alt="HoneyVeda"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -3247,20 +3552,20 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We always wanted to give customers more flexibility after placing an order. This app delivered exactly that. Very intuitive and doesn’t affect our existing workflow. On point and instant support by Smit and Mohit</blockquote>
+          <blockquote class="cp-rw__text">We were looking for a way to offer basic order changes without complicating our process. This app nailed it. Clean interface, easy for customers, and fits right into our workflow</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/rijac.png" alt="RIJAC"></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sammvaad.png" alt="Sammvaad"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">July 16, 2025</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">This app does exactly what it promises. We&#x27;ve been able to reduce customer complaints by allowing easy order edits and cancellations. The setup was smooth, and their support team was quick to respond when we had questions. Definitely recommend it if you&#x27;re looking to improve post-purchase experience.</blockquote>
+          <blockquote class="cp-rw__text">ClickPost’s Order Editing &amp; Cancel tool has been a game-changer for Sudathi. With alot of of our support tickets related to order edits, it helped our customers to self-edit addresses, variants, and even cancel orders before shipping. It drastically reduced support load, and improved customer satisfaction. A must-have tool for brands focused on delivering smooth, scalable customer experiences.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/italian-colony.png" alt="Italian Colony"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">July 15, 2025</span><span class="cp-rw__country">India</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sudathi.png" alt="Sudathi"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">June 30, 2025</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -3274,29 +3579,38 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Really helped us quickly to fix all issues</blockquote>
+          <blockquote class="cp-rw__text">We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/doonails.svg" alt="Doonails"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 6, 2026</span><span class="cp-rw__country">Cyprus</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">January 8, 2026</span><span class="cp-rw__country">United States</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Works as described. I set an order editing window when customers can change/edit their own orders. They like it because it&#x27;s fast and easy and I like it because it lowers my support tickets. Easily one of the best apps I have because it&#x27;s easy to use and it gives both me and my customers what I want. It&#x27;s a win/win app. The developers are always adding new features too, like upselling, that I appreciate. The more I can do within 1 app so I don&#x27;t have to have a ton of apps, the better. I highly recommend.</blockquote>
+          <blockquote class="cp-rw__text">Great tool. Easy to install and use. Really easy to quantify the value: Each time an order is edited is one call/email that I didn&#x27;t have to manage. The customer service team is also really good, fast and responsive.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/shred-finger-boards.png" alt="Shred Finger Boards"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">September 22, 2025</span><span class="cp-rw__country">United States</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/fulton365.png" alt="Fulton365"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">September 15, 2025</span><span class="cp-rw__country">United States</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Great experience and fantastic support from the ClickPost team with my questions. Our top customer service requests are for order edits, so this immediately cut support tickets making it easy to quantify the ROI. A lot of customization features and various upsell tools are included in the app that I can implement to increase AOV as well. I highly recommend it.</blockquote>
+          <blockquote class="cp-rw__text">Been using this order editing app for a few weeks now and it&#x27;s been pretty smooth. The main thing I like is how easy it is for customers to make changes themselves instead of emailing us every time. Mohit from the team was super quick to respond when I had a small issue during setup, got it fixed in no time. Definitely worth it</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/vanillapura.png" alt="VanillaPura"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">August 27, 2025</span><span class="cp-rw__country">United States</span></span>
+            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Pinacolada</span></span></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 27, 2026</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">We always wanted to give customers more flexibility after placing an order. This app delivered exactly that. Very intuitive and doesn’t affect our existing workflow. On point and instant support by Smit and Mohit</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/rijac.png" alt="RIJAC"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">July 16, 2025</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -3337,38 +3651,29 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Nice little app. Clickpost made it easy for customers to edit orders without contacting us all the time. Setup was quick, and Mohit was super helpful when we had a small issue. Solid support and does the job well.</blockquote>
+          <blockquote class="cp-rw__text">Really happy with Clickpost so far. We added it mainly for order edits but ended up using the upsell part too, which actually brought in a bit of extra revenue without much effort. Setup was pretty straightforward, and when I got stuck, Smit jumped in and helped quickly. Loving it so far.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/wellwith.png" alt="Wellwith"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 30, 2026</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/modomu.png" alt="Modomu"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 28, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We’ve had a great experience using the ClickPost Order Editing app. It allows customers to easily update addresses, change sizes, or modify orders post-purchase, which has significantly reduced our support queries. Support team is responsive and helpful whenever needed.</blockquote>
+          <blockquote class="cp-rw__text">Clean and simple app, no unnecessary complexity. Helps customers manage their orders themselves, which has saved us a lot of time daily.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/muffynn.png" alt="Muffynn"></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/lovelang.png" alt="lovelang"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Really happy with how simple and effective this is. It’s reduced a lot of manual work and made the whole process feel more seamless.</blockquote>
+          <blockquote class="cp-rw__text">good app , it helps the clients to identify the data where customer modified the details of orders. also helps the customers edit the data on their end for smoother operations. it helps the organization to save the support cost and time.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/buysohi.png" alt="buysohi"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span></span>
-          </figcaption>
-        </figure>
-        <figure class="cp-rw__card">
-          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">Simple, does exactly what we needed. Customers can fix their own orders without reaching out, and it’s honestly saved our team a lot of time.</blockquote>
-          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
-          <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><span class="cp-rw__mark cp-rw__mark--word"><span>Samoh International</span></span></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">March 30, 2026</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/honeyveda.png" alt="HoneyVeda"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">April 2, 2026</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
@@ -3472,20 +3777,47 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">We always wanted to give customers more flexibility after placing an order. This app delivered exactly that. Very intuitive and doesn’t affect our existing workflow. On point and instant support by Smit and Mohit</blockquote>
+          <blockquote class="cp-rw__text">We were looking for a way to offer basic order changes without complicating our process. This app nailed it. Clean interface, easy for customers, and fits right into our workflow</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/rijac.png" alt="RIJAC"></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sammvaad.png" alt="Sammvaad"></span>
             <span class="cp-rw__meta"><span class="cp-rw__date">July 16, 2025</span><span class="cp-rw__country">India</span></span>
           </figcaption>
         </figure>
         <figure class="cp-rw__card">
           <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
-          <blockquote class="cp-rw__text">This app does exactly what it promises. We&#x27;ve been able to reduce customer complaints by allowing easy order edits and cancellations. The setup was smooth, and their support team was quick to respond when we had questions. Definitely recommend it if you&#x27;re looking to improve post-purchase experience.</blockquote>
+          <blockquote class="cp-rw__text">ClickPost’s Order Editing &amp; Cancel tool has been a game-changer for Sudathi. With alot of of our support tickets related to order edits, it helped our customers to self-edit addresses, variants, and even cancel orders before shipping. It drastically reduced support load, and improved customer satisfaction. A must-have tool for brands focused on delivering smooth, scalable customer experiences.</blockquote>
           <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
           <figcaption class="cp-rw__foot">
-            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/italian-colony.png" alt="Italian Colony"></span>
-            <span class="cp-rw__meta"><span class="cp-rw__date">July 15, 2025</span><span class="cp-rw__country">India</span></span>
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/sudathi.png" alt="Sudathi"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">June 30, 2025</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">This has been reducing the number of emails we receive to update orders. It&#x27;s easy to use and set up and the developers have been very receptive to changes and suggestions and quick to respond to emails.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/curlwarehouse.png" alt="Curl Warehouse"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">March 19, 2026</span><span class="cp-rw__country">Canada</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">We’ve been using Clickpost and it’s genuinely been super helpful. Customers can handle order edits themselves, and the post-purchase upsells have been a solid bonus for incremental revenue. Setup was straightforward, everything’s been running smoothly, and support has been great too — the team was quick to respond and got us up and running fast.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/customers/marsbyghc.png" alt="Mars By GHC"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">January 8, 2026</span><span class="cp-rw__country">United States</span></span>
+          </figcaption>
+        </figure>
+        <figure class="cp-rw__card">
+          <svg class="cp-rw__q" width="26" height="20" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M0 20V11.6C0 5.6 3.4 1.2 9.6 0l1.2 3.2C7 4.4 5.2 6.6 5.2 9.2h4.2V20H0Zm14.8 0V11.6C14.8 5.6 18.2 1.2 24.4 0L25.6 3.2c-3.8 1.2-5.6 3.4-5.6 6h4.2V20h-9.4Z"/></svg>
+          <blockquote class="cp-rw__text">Great tool. Easy to install and use. Really easy to quantify the value: Each time an order is edited is one call/email that I didn&#x27;t have to manage. The customer service team is also really good, fast and responsive.</blockquote>
+          <svg class="cp-rw__q cp-rw__q--end" width="22" height="17" viewBox="0 0 26 20" fill="#252525" aria-hidden="true"><path d="M26 0v8.4c0 6-3.4 10.4-9.6 11.6l-1.2-3.2c3.8-1.2 5.6-3.4 5.6-6h-4.2V0H26ZM11.2 0v8.4c0 6-3.4 10.4-9.6 11.6L.4 16.8c3.8-1.2 5.6-3.4 5.6-6H1.8V0h9.4Z"/></svg>
+          <figcaption class="cp-rw__foot">
+            <span class="cp-rw__who"><img class="cp-rw__mark" src="assets/reviews/fulton365.png" alt="Fulton365"></span>
+            <span class="cp-rw__meta"><span class="cp-rw__date">September 15, 2025</span><span class="cp-rw__country">United States</span></span>
           </figcaption>
         </figure>
       </div>
@@ -3493,102 +3825,138 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
     <!-- REVIEWS:END -->
   </section>
 
-  <!-- ── Case study: DOONAILS ─────────────────────── -->
-    <section class="cp-cse" id="case-studies" style="scroll-margin-top: 104px;" data-screen-label="Case study">
-        <img class="cp-cse__photo" src="assets/case-study/doonails-hero.webp" alt="DOONAILS press-on nails from the Wine &amp; Dine collection" width="900" height="900" loading="lazy">
-        <div class="cp-cse__inner">
-          <div class="cp-cse__copy">
-            <img class="cp-cse__mark" src="assets/case-study/doonails.svg" alt="DOONAILS" width="137" height="17">
-            <h2 class="cp-cse__h">
-              <span><b>4,000</b><i>orders edited</i></span>
-              <span><b>$20,000</b><i>saved</i></span>
-            </h2>
-            <figure class="cp-cse__quote">
-              <blockquote><svg class="cp-cse__qm" width="19" height="15" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>Really helped us quickly to fix all issues.</blockquote>
-              <figcaption><i class="cp-cse__dash"></i><span class="cp-cse__sig">Doonails</span><i class="cp-cse__bar"></i><span>Cyprus &middot; March 2026</span></figcaption>
-            </figure>
-            <a class="cp-cta-more" href="#"><span>Explore how</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
-          </div>
-          <div class="cp-cse__stage">
-            <img class="cp-cse__shot" src="assets/case-study/doonails-edit.jpg" alt="The DOONAILS Thank You page with the edit panel: change contact information, edit shipping address, update the order, apply a discount code or cancel." width="1140" height="750" loading="lazy">
-        </div>
-      </div>
-    </section>
-  <section class="cp-gs" data-screen-label="Case study: upsells">
-        <svg class="cp-gs__leaves" viewBox="0 0 560 390" fill="none" aria-hidden="true" focusable="false">
-          <g transform="translate(-70 330) rotate(-28) scale(1.55)">
-            <path d="M0 0C34-50 116-62 200-6 116 50 34 44 0 0Z" fill="#5FBE8A" fill-opacity="0.22"></path>
-            <path d="M8 0C70-16 140-16 192-6" stroke="#8FDCB2" stroke-opacity="0.26" stroke-width="2.6" stroke-linecap="round"></path>
-          </g>
-          <g transform="translate(-30 392) rotate(-56) scale(1.3)">
-            <path d="M0 0C34-50 116-62 200-6 116 50 34 44 0 0Z" fill="#5FBE8A" fill-opacity="0.22"></path>
-            <path d="M8 0C70-16 140-16 192-6" stroke="#8FDCB2" stroke-opacity="0.26" stroke-width="2.6" stroke-linecap="round"></path>
-          </g>
-          <g transform="translate(130 396) rotate(-10) scale(1.08)">
-            <path d="M0 0C34-50 116-62 200-6 116 50 34 44 0 0Z" fill="#5FBE8A" fill-opacity="0.22"></path>
-            <path d="M8 0C70-16 140-16 192-6" stroke="#8FDCB2" stroke-opacity="0.26" stroke-width="2.6" stroke-linecap="round"></path>
-          </g>
-          <g transform="translate(58 276) rotate(-76) scale(0.78)">
-            <path d="M0 0C34-50 116-62 200-6 116 50 34 44 0 0Z" fill="#5FBE8A" fill-opacity="0.22"></path>
-            <path d="M8 0C70-16 140-16 192-6" stroke="#8FDCB2" stroke-opacity="0.26" stroke-width="2.6" stroke-linecap="round"></path>
-          </g>
-        </svg>
+  <!-- ── Case study: SoTrue RTO ─────────────────────
+       Figures are SoTrue's own shipment table, June to August 2026, as
+       shared by the ClickPost team. 33% is the relative drop in RTO rate:
+       (30.06 - 20.01) / 30.06. The deltas are green because down is good
+       here; the arrow says which way they went. -->
+  <section class="cp-gs cp-gs--rto" id="case-studies" style="scroll-margin-top: 104px;" data-screen-label="Case study: RTO">
         <div class="cp-gs__top">
           <div class="cp-gs__copy">
-            <span class="cp-gs__who">A US gardening brand doing ~10,000 orders / month</span>
-            <h2 class="cp-gs__h"><b>&ldquo;$16,638</b>
-              <span>in upsell revenue</span>
-              <i>in 30 days with avg upsell value of $75.63&rdquo;</i></h2>
-            <a class="cp-cta-more" href="#"><span>Explore how</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
+            <img class="cp-rto__photo" src="assets/case-study/sotrue-portrait.webp" alt="A SoTrue model holding a tube of SoTrue glow cream to her face" width="800" height="955" loading="lazy">
+            <img class="cp-rto__mark" src="assets/case-study/sotrue-white.png" alt="SoTrue" width="207" height="48">
+            <span class="cp-gs__who">Indian beauty brand, ~63,000 shipments / month</span>
+            <h2 class="cp-gs__h"><b>33% fewer RTOs</b>
+              <span>30.06% down to 20.01%</span>
+              <i>in two months</i></h2>
+            <a class="cp-cta-more" href="#book-a-call"><span>Book a demo</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
           </div>
           <div class="cp-gs__side">
             <div class="cp-gs__card">
               <div class="cp-gs__head">
-                <b>Upsell revenue, last 30 days</b>
-                <i>27 July to 27 August 2026</i>
+                <b>SoTrue shipments, NDR and RTO</b>
+                <i>June to August 2026</i>
               </div>
               <div class="cp-gs__metrics">
                 <div class="cp-gs__m">
-                  <span><b>Upsell revenue</b><i class="cp-gs__tag">30 days</i></span>
-                  <span class="cp-gs__mv">USD 16,638.25<em class="cp-gs__d cp-gs__d--up"><svg width="15" height="13" viewBox="0 0 17 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L7 5l3 3 4-4.5"></path></svg>+24.2%</em></span>
-                  <i>From 220 completed upsells</i>
+                  <span><b>RTO rate</b><i class="cp-gs__tag">Aug 2026</i></span>
+                  <span class="cp-gs__mv">20.01%<em class="cp-gs__d cp-gs__d--up"><svg width="15" height="13" viewBox="0 0 17 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5L7 9l3-3 4 4.5"></path></svg>&minus;10.05 pts</em></span>
+                  <i>From 30.06% in June</i>
                 </div>
                 <div class="cp-gs__m">
-                  <span><b>Upsell conversion</b><i class="cp-gs__tag">30 days</i></span>
-                  <span class="cp-gs__mv">59.9%<em class="cp-gs__d cp-gs__d--down"><svg width="15" height="13" viewBox="0 0 17 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5L7 9l3-3 4 4.5"></path></svg>−6.3%</em></span>
-                  <i>220 of 367 unique orders</i>
+                  <span><b>NDR rate</b><i class="cp-gs__tag">Aug 2026</i></span>
+                  <span class="cp-gs__mv">32.70%<em class="cp-gs__d cp-gs__d--up"><svg width="15" height="13" viewBox="0 0 17 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5L7 9l3-3 4 4.5"></path></svg>&minus;8.9 pts</em></span>
+                  <i>From 41.60% in June</i>
                 </div>
                 <div class="cp-gs__m">
-                  <span><b>Avg revenue per upsell</b><i class="cp-gs__tag">30 days</i></span>
-                  <span class="cp-gs__mv">USD 75.63<em class="cp-gs__d cp-gs__d--up"><svg width="15" height="13" viewBox="0 0 17 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L7 5l3 3 4-4.5"></path></svg>+25.9%</em></span>
-                  <i>Items added: 342</i>
+                  <span><b>RTOs a month</b><i class="cp-gs__tag">Aug 2026</i></span>
+                  <span class="cp-gs__mv">12,650<em class="cp-gs__d cp-gs__d--up"><svg width="15" height="13" viewBox="0 0 17 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5L7 9l3-3 4 4.5"></path></svg>&minus;5,997</em></span>
+                  <i>From 18,647 in June</i>
                 </div>
               </div>
-              <svg class="cp-gs__chart" viewBox="0 0 700 212" fill="none" role="img" aria-label="Upsell revenue by day over thirty days against the previous period, totalling $16,638.25"><defs><linearGradient id="gsFill" x1="0" y1="14" x2="0" y2="168" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2E7D46" stop-opacity="0.16"></stop><stop offset="1" stop-color="#2E7D46" stop-opacity="0"></stop></linearGradient></defs><line x1="48" y1="168.0" x2="690" y2="168.0" stroke="#E6E4DC" stroke-width="1"></line><line x1="48" y1="122.2" x2="690" y2="122.2" stroke="#E6E4DC" stroke-width="1"></line><line x1="48" y1="76.3" x2="690" y2="76.3" stroke="#E6E4DC" stroke-width="1"></line><line x1="48" y1="30.5" x2="690" y2="30.5" stroke="#E6E4DC" stroke-width="1"></line><text x="38" y="171.5" text-anchor="end" font-size="10.5" fill="#8C8A82">$0</text><text x="38" y="125.7" text-anchor="end" font-size="10.5" fill="#8C8A82">1.0k</text><text x="38" y="79.8" text-anchor="end" font-size="10.5" fill="#8C8A82">2.0k</text><text x="38" y="34.0" text-anchor="end" font-size="10.5" fill="#8C8A82">3.0k</text><text x="48.0" y="194" text-anchor="middle" font-size="10.5" fill="#8C8A82">Jul 27</text><text x="172.3" y="194" text-anchor="middle" font-size="10.5" fill="#8C8A82">Aug 2</text><text x="296.5" y="194" text-anchor="middle" font-size="10.5" fill="#8C8A82">Aug 8</text><text x="420.8" y="194" text-anchor="middle" font-size="10.5" fill="#8C8A82">Aug 14</text><text x="545.0" y="194" text-anchor="middle" font-size="10.5" fill="#8C8A82">Aug 20</text><text x="669.3" y="194" text-anchor="middle" font-size="10.5" fill="#8C8A82">Aug 26</text><path d="M48.0 166.0 C51.7 165.6 61.3 167.2 68.7 163.3 C76.2 159.4 82.0 145.3 89.4 144.5 C96.9 143.8 102.7 156.1 110.1 159.0 C117.6 162.0 123.4 162.4 130.8 161.0 C138.3 159.6 144.1 152.9 151.5 151.2 C159.0 149.5 164.8 152.5 172.3 151.6 C179.7 150.7 185.5 146.8 193.0 146.1 C200.4 145.4 206.2 143.9 213.7 147.7 C221.1 151.4 226.9 163.5 234.4 166.8 C241.8 170.2 247.6 168.5 255.1 166.4 C262.6 164.3 268.4 157.6 275.8 155.1 C283.3 152.6 289.1 154.3 296.5 152.4 C304.0 150.5 309.8 146.1 317.2 144.5 C324.7 143.0 330.5 143.5 337.9 143.8 C345.4 144.0 351.2 151.3 358.6 146.1 C366.1 140.9 371.9 114.6 379.4 114.8 C386.8 115.1 392.6 141.2 400.1 147.7 C407.5 154.1 413.3 148.4 420.8 150.8 C428.2 153.2 434.0 168.9 441.5 161.0 C448.9 153.0 454.7 116.3 462.2 106.6 C469.6 96.9 475.4 106.0 482.9 107.0 C490.4 108.0 496.2 124.6 503.6 112.1 C511.1 99.6 516.9 29.1 524.3 37.4 C531.8 45.8 537.6 137.1 545.0 158.2 C552.5 179.4 558.3 155.7 565.7 155.1 C573.2 154.5 579.0 156.4 586.5 155.1 C593.9 153.8 599.7 146.2 607.2 147.7 C614.6 149.2 620.4 166.9 627.9 163.3 C635.3 159.7 641.1 127.5 648.6 127.7 C656.0 128.0 661.8 162.5 669.3 164.5 C676.7 166.5 686.3 143.3 690.0 138.7 L690.0 168.0 L48.0 168.0 Z" fill="url(#gsFill)"></path><path d="M48.0 158.2 C51.7 157.0 61.3 157.3 68.7 151.2 C76.2 145.1 82.0 125.1 89.4 124.2 C96.9 123.3 102.7 139.1 110.1 146.1 C117.6 153.1 123.4 162.4 130.8 163.3 C138.3 164.2 144.1 153.9 151.5 151.2 C159.0 148.5 164.8 147.8 172.3 148.5 C179.7 149.2 185.5 158.6 193.0 155.1 C200.4 151.6 206.2 136.2 213.7 128.9 C221.1 121.6 226.9 114.5 234.4 114.5 C241.8 114.5 247.6 125.1 255.1 128.9 C262.6 132.7 268.4 129.4 275.8 135.6 C283.3 141.7 289.1 159.8 296.5 163.3 C304.0 166.8 309.8 159.2 317.2 155.1 C324.7 151.0 330.5 147.0 337.9 140.6 C345.4 134.3 351.2 120.6 358.6 119.9 C366.1 119.2 371.9 132.0 379.4 136.7 C386.8 141.4 392.6 144.0 400.1 146.1 C407.5 148.2 413.3 149.6 420.8 148.5 C428.2 147.3 434.0 140.3 441.5 139.9 C448.9 139.4 454.7 144.8 462.2 146.1 C469.6 147.4 475.4 147.0 482.9 147.3 C490.4 147.6 496.2 147.5 503.6 147.7 C511.1 147.9 516.9 147.0 524.3 148.5 C531.8 149.9 537.6 154.3 545.0 155.5 C552.5 156.7 558.3 157.5 565.7 155.1 C573.2 152.7 579.0 140.1 586.5 142.2 C593.9 144.3 599.7 162.6 607.2 166.8 C614.6 171.0 620.4 165.7 627.9 165.7 C635.3 165.6 641.1 166.9 648.6 166.4 C656.0 166.0 661.8 163.5 669.3 163.3 C676.7 163.2 686.3 165.2 690.0 165.7" stroke="#5B9BD5" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2.6 3.4"></path><path d="M48.0 166.0 C51.7 165.6 61.3 167.2 68.7 163.3 C76.2 159.4 82.0 145.3 89.4 144.5 C96.9 143.8 102.7 156.1 110.1 159.0 C117.6 162.0 123.4 162.4 130.8 161.0 C138.3 159.6 144.1 152.9 151.5 151.2 C159.0 149.5 164.8 152.5 172.3 151.6 C179.7 150.7 185.5 146.8 193.0 146.1 C200.4 145.4 206.2 143.9 213.7 147.7 C221.1 151.4 226.9 163.5 234.4 166.8 C241.8 170.2 247.6 168.5 255.1 166.4 C262.6 164.3 268.4 157.6 275.8 155.1 C283.3 152.6 289.1 154.3 296.5 152.4 C304.0 150.5 309.8 146.1 317.2 144.5 C324.7 143.0 330.5 143.5 337.9 143.8 C345.4 144.0 351.2 151.3 358.6 146.1 C366.1 140.9 371.9 114.6 379.4 114.8 C386.8 115.1 392.6 141.2 400.1 147.7 C407.5 154.1 413.3 148.4 420.8 150.8 C428.2 153.2 434.0 168.9 441.5 161.0 C448.9 153.0 454.7 116.3 462.2 106.6 C469.6 96.9 475.4 106.0 482.9 107.0 C490.4 108.0 496.2 124.6 503.6 112.1 C511.1 99.6 516.9 29.1 524.3 37.4 C531.8 45.8 537.6 137.1 545.0 158.2 C552.5 179.4 558.3 155.7 565.7 155.1 C573.2 154.5 579.0 156.4 586.5 155.1 C593.9 153.8 599.7 146.2 607.2 147.7 C614.6 149.2 620.4 166.9 627.9 163.3 C635.3 159.7 641.1 127.5 648.6 127.7 C656.0 128.0 661.8 162.5 669.3 164.5 C676.7 166.5 686.3 143.3 690.0 138.7" stroke="#2E7D46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-              <div class="cp-gs__key">
-                <span class="cp-gs__key--now">Upsell revenue</span>
-                <span class="cp-gs__key--prev">Previous period</span>
+            <figure class="cp-rc">
+              <div class="cp-rc__key"><span class="cp-rc__key--ndr">NDR rate</span><span class="cp-rc__key--rto">RTO rate</span></div>
+              <svg class="cp-rc__svg" viewBox="0 0 700 256" role="img" aria-label="NDR and RTO rate by month, June to August 2026. NDR fell from 41.6% to 33.7% to 32.7%; RTO fell from 30.1% to 21.4% to 20.0%.">
+      <line class="cp-rc__grid cp-rc__grid--base" x1="56" x2="690" y1="224.0" y2="224.0"></line><text class="cp-rc__tick" x="46" y="228.0">0%</text>
+      <line class="cp-rc__grid" x1="56" x2="690" y1="184.0" y2="184.0"></line><text class="cp-rc__tick" x="46" y="188.0">10%</text>
+      <line class="cp-rc__grid" x1="56" x2="690" y1="144.0" y2="144.0"></line><text class="cp-rc__tick" x="46" y="148.0">20%</text>
+      <line class="cp-rc__grid" x1="56" x2="690" y1="104.0" y2="104.0"></line><text class="cp-rc__tick" x="46" y="108.0">30%</text>
+      <line class="cp-rc__grid" x1="56" x2="690" y1="64.0" y2="64.0"></line><text class="cp-rc__tick" x="46" y="68.0">40%</text>
+      <line class="cp-rc__grid" x1="56" x2="690" y1="24.0" y2="24.0"></line><text class="cp-rc__tick" x="46" y="28.0">50%</text>
+      <g class="cp-rc__bar cp-rc__bar--ndr"><title>June 2026: NDR 41.60% (25,801 of 62,024 shipments)</title><rect class="cp-rc__hit" x="96.7" y="14" width="68" height="210"></rect><path d="M100.7 224 V61.6 Q100.7 57.6 104.7 57.6 H156.7 Q160.7 57.6 160.7 61.6 V224 Z"></path><text class="cp-rc__val" x="130.7" y="49.6">41.6%</text></g>
+      <g class="cp-rc__bar cp-rc__bar--rto"><title>June 2026: RTO 30.06% (18,647 of 62,024 shipments)</title><rect class="cp-rc__hit" x="158.7" y="14" width="68" height="210"></rect><path d="M162.7 224 V107.8 Q162.7 103.8 166.7 103.8 H218.7 Q222.7 103.8 222.7 107.8 V224 Z"></path><text class="cp-rc__val" x="192.7" y="95.8">30.1%</text></g>
+      <text class="cp-rc__x" x="161.7" y="246">June</text>
+      <g class="cp-rc__bar cp-rc__bar--ndr"><title>July 2026: NDR 33.70% (21,233 of 63,006 shipments)</title><rect class="cp-rc__hit" x="308.0" y="14" width="68" height="210"></rect><path d="M312.0 224 V93.2 Q312.0 89.2 316.0 89.2 H368.0 Q372.0 89.2 372.0 93.2 V224 Z"></path><text class="cp-rc__val" x="342.0" y="81.2">33.7%</text></g>
+      <g class="cp-rc__bar cp-rc__bar--rto"><title>July 2026: RTO 21.35% (13,449 of 63,006 shipments)</title><rect class="cp-rc__hit" x="370.0" y="14" width="68" height="210"></rect><path d="M374.0 224 V142.6 Q374.0 138.6 378.0 138.6 H430.0 Q434.0 138.6 434.0 142.6 V224 Z"></path><text class="cp-rc__val" x="404.0" y="130.6">21.4%</text></g>
+      <text class="cp-rc__x" x="373.0" y="246">July</text>
+      <g class="cp-rc__bar cp-rc__bar--ndr"><title>August 2026: NDR 32.70% (20,675 of 63,225 shipments)</title><rect class="cp-rc__hit" x="519.3" y="14" width="68" height="210"></rect><path d="M523.3 224 V97.2 Q523.3 93.2 527.3 93.2 H579.3 Q583.3 93.2 583.3 97.2 V224 Z"></path><text class="cp-rc__val" x="553.3" y="85.2">32.7%</text></g>
+      <g class="cp-rc__bar cp-rc__bar--rto"><title>August 2026: RTO 20.01% (12,650 of 63,225 shipments)</title><rect class="cp-rc__hit" x="581.3" y="14" width="68" height="210"></rect><path d="M585.3 224 V148.0 Q585.3 144.0 589.3 144.0 H641.3 Q645.3 144.0 645.3 148.0 V224 Z"></path><text class="cp-rc__val" x="615.3" y="136.0">20.0%</text></g>
+      <text class="cp-rc__x" x="584.3" y="246">August</text>
+              </svg>
+            </figure>
+              <details class="cp-rto__more">
+                <summary>See the monthly numbers</summary>
+              <div class="cp-rto__wrap">
+                <table class="cp-rto__table">
+                  <thead><tr><th scope="col">Month</th><th scope="col">Shipments</th><th scope="col">NDR</th><th scope="col">NDR %</th><th scope="col">RTO</th><th scope="col">RTO %</th></tr></thead>
+                  <tbody>
+                  <tr><th scope="row">June 2026</th><td>62,024</td><td>25,801</td><td>41.60%</td><td>18,647</td><td><span class="cp-rto__bar" style="--w: 100.0%;" aria-hidden="true"></span><b>30.06%</b></td></tr>
+                  <tr><th scope="row">July 2026</th><td>63,006</td><td>21,233</td><td>33.70%</td><td>13,449</td><td><span class="cp-rto__bar" style="--w: 71.0%;" aria-hidden="true"></span><b>21.35%</b></td></tr>
+                  <tr><th scope="row">Aug 2026</th><td>63,225</td><td>20,675</td><td>32.70%</td><td>12,650</td><td><span class="cp-rto__bar" style="--w: 66.6%;" aria-hidden="true"></span><b>20.01%</b></td></tr>
+                  </tbody>
+                </table>
               </div>
+              </details>
             </div>
           </div>
         </div>
       </section>
+  <!-- ── Case studies: Savana and Urbanic ───────────
+       From the two one-pagers in Sales Resources (Oct 2026). The quote
+       and the figures are theirs, word for word; nothing is rounded.
+       Both are in the carousel above too, in short. -->
+    <section class="cp-cse cp-cse--savana" data-screen-label="Case study: Savana">
+        <img class="cp-cse__photo" src="assets/case-study/savana-hero.webp" alt="A Savana model in a green floral dress on a picnic blanket" width="825" height="1100" loading="lazy">
+        <div class="cp-cse__inner">
+          <div class="cp-cse__copy">
+            <img class="cp-cse__mark cp-cse__mark--savana" src="assets/case-study/savana-white.png" alt="Savana" width="520" height="87">
+            <span class="cp-cse__eyebrow">Fashion for millennial and Gen Z shoppers in India</span>
+            <h2 class="cp-cse__h">
+              <span><b>25%</b><i>support queries self-served</i></span>
+              <span><b>18L+</b><i>D2C orders a month</i></span>
+            </h2>
+            <figure class="cp-cse__quote">
+              <blockquote><svg class="cp-cse__qm" width="19" height="15" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>With ClickPost, customers update their own address or item, so our team is off that queue. Returns are managed through ClickPost across multiple couriers too, so the pickup journey is tracked and communicated. Our returns CSAT has gone up.</blockquote>
+              <figcaption><img class="cp-cse__face" src="assets/case-study/ashutosh-sharma.webp" alt="" width="160" height="160"><span><b>Ashutosh Sharma</b>Growth and Expansion, Urbanic and Savana</span></figcaption>
+            </figure>
+            <a class="cp-cta-more" href="#book-a-call"><span>Book a demo</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
+          </div>
+        </div>
+    </section>
+    <section class="cp-cse cp-cse--urbanic" data-screen-label="Case study: Urbanic">
+        <img class="cp-cse__photo" src="assets/case-study/urbanic-hero.webp" alt="Four Urbanic models in bright summer outfits, laughing" width="1100" height="1100" loading="lazy">
+        <div class="cp-cse__inner">
+          <div class="cp-cse__copy">
+            <img class="cp-cse__mark cp-cse__mark--urbanic" src="assets/case-study/urbanic-white.png" alt="Urbanic" width="520" height="130">
+            <span class="cp-cse__eyebrow">Digital-first fashion and retail brand, founded 2019</span>
+            <h2 class="cp-cse__h">
+              <span><b>20&ndash;25%</b><i>fewer support queries</i></span>
+            </h2>
+            <figure class="cp-cse__quote">
+              <blockquote><svg class="cp-cse__qm" width="19" height="15" viewBox="0 0 26 20" fill="currentColor" aria-hidden="true"><path d="M0 20V11.6C0 5.2 3.5 1 9.6 0l1 2.4C7 3.6 5.2 5.9 5.2 8.6H9V20H0Zm16.4 0V11.6C16.4 5.2 19.9 1 26 0l1 2.4c-3.6 1.2-5.4 3.5-5.4 6.2h3.8V20h-9Z"></path></svg>Order edits were a quarter of our support queries and a real source of customer anxiety. With ClickPost, customers update their own address or item, so our team is off that queue entirely.</blockquote>
+              <figcaption><img class="cp-cse__face" src="assets/case-study/ashutosh-sharma.webp" alt="" width="160" height="160"><span><b>Ashutosh Sharma</b>Growth and Expansion, Urbanic and Savana</span></figcaption>
+            </figure>
+            <a class="cp-cta-more" href="#book-a-call"><span>Book a demo</span><svg width="15" height="13" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></a>
+          </div>
+        </div>
+    </section>
+
   <!-- ── Integrations ─────────────────────────────────── -->
   <section style="padding: 120px 112px 80px; display: flex; flex-direction: column; gap: 64px; align-items: center;" data-screen-label="Integrations">
-    <h2 style="margin: 0; width: 916px; font-size: 44px; font-weight: 500; line-height: 54px; text-align: center; color: #252525;">Marketing, subscriptions, reviews, fulfilment, ERP</h2>
+    <h2 style="margin: 0; width: 916px; font-size: 44px; font-weight: 500; line-height: 54px; text-align: center; color: #252525;">Checkout, payments, OMS, WMS</h2>
     <div style="display: flex; flex-direction: column; gap: 44px; align-items: center; align-self: stretch;">
-      <x-import component-from-global-scope="Frame1171276358" from="./components/Components.static.js" hint-size="1216px,180px"></x-import>
-      <!-- second row: marks taken from each vendor's own site -->
-      <div style="display: flex; flex-direction: row; gap: 40px; justify-content: center; align-items: center;">
-        <img src="assets/integrations/recharge.svg" alt="Recharge" width="150" height="30" style="width: 160px; height: 34px; object-fit: contain; display: block;">
-        <img src="assets/integrations/loop.png" alt="Loop Subscriptions" width="738" height="272" style="width: 160px; height: 34px; object-fit: contain; display: block;">
-        <img src="assets/integrations/shop.png" alt="Shop app" width="1200" height="627" style="width: 160px; height: 34px; object-fit: contain; display: block;">
-        <img src="assets/integrations/orderdesk.png" alt="Order Desk" width="700" height="110" style="width: 160px; height: 34px; object-fit: contain; display: block;">
+      <!-- checkout and payments; marks from each vendor's own site -->
+      <div style="display: flex; flex-direction: row; gap: 48px; justify-content: center; align-items: center;">
+        <img src="assets/integrations/gokwik.svg" alt="GoKwik" width="141" height="39" style="width: 170px; height: 40px; object-fit: contain; display: block;">
+        <img src="assets/integrations/shopflo.svg" alt="Shopflo" width="577" height="137" style="width: 170px; height: 34px; object-fit: contain; display: block;">
+        <img src="assets/integrations/razorpay.svg" alt="Razorpay" width="1896" height="401" style="width: 170px; height: 34px; object-fit: contain; display: block;">
       </div>
-      <div style="display: flex; flex-direction: row; gap: 40px; justify-content: center; align-items: center;">
-        <img src="assets/integrations/sap.svg" alt="SAP" width="412" height="204" style="width: 160px; height: 34px; object-fit: contain; display: block;">
-        <img src="assets/integrations/judgeme.png" alt="Judge.me" width="869" height="175" style="width: 160px; height: 34px; object-fit: contain; display: block;">
-        <img src="assets/integrations/yotpo.svg" alt="Yotpo" width="113" height="32" style="width: 160px; height: 34px; object-fit: contain; display: block;">
+      <!-- OMS and WMS; Increff's mark is its white one recoloured for a light ground -->
+      <div style="display: flex; flex-direction: row; gap: 48px; justify-content: center; align-items: center;">
+        <img src="assets/integrations/unicommerce.svg" alt="Unicommerce" width="200" height="108" style="width: 170px; height: 52px; object-fit: contain; display: block;">
+        <img src="assets/integrations/vinculum.svg" alt="Vinculum" width="538" height="167" style="width: 170px; height: 44px; object-fit: contain; display: block;">
+        <img src="assets/integrations/increff.svg" alt="Increff" width="249" height="75" style="width: 170px; height: 40px; object-fit: contain; display: block;">
+        <img src="assets/integrations/easyecom.svg" alt="EasyEcom" width="510" height="90" style="width: 170px; height: 34px; object-fit: contain; display: block;">
       </div>
     </div>
     <div class="cp-int-cta" style="align-self: stretch; border-radius: 12px; background: #EEF3FF; border: 1px solid #D6E4FF; padding: 48px 56px; display: flex; flex-direction: row; gap: 48px; justify-content: space-between; align-items: center;">
@@ -3601,39 +3969,10 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
 
 
   <!-- ── Languages ─────────────────────── -->
-  <section style="position: relative; background: #ffffff; padding: 96px 112px 104px; display: flex; flex-direction: column; align-items: center; overflow: hidden;" data-screen-label="Languages">
-    <div class="cp-lang__row">
-      <div class="cp-globe" data-pin="{{ globePin }}">
-        <canvas id="cp-globe-canvas" width="1320" height="1320" role="img" aria-label="A globe of land dots, turning; picking a language moves it to that country"></canvas>
-      </div>
-      <div class="cp-lang__inner">
-        <h2 style="margin: 0; width: 560px; font-size: 44px; font-weight: 700; line-height: 54px; letter-spacing: -0.02em; color: #101828;">Let shoppers edit orders in their <span style="color: #155FFF;">own language.</span></h2>
-        <div class="cp-lang__wrap">
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang1 }}" onClick="{{ pickLang1 }}"><img src="assets/flags/es.png" alt="" width="80" height="53"><span>Spanish</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang2 }}" onClick="{{ pickLang2 }}"><img src="assets/flags/fr.png" alt="" width="80" height="53"><span>French</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang3 }}" onClick="{{ pickLang3 }}"><img src="assets/flags/it.png" alt="" width="80" height="53"><span>Italian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang4 }}" onClick="{{ pickLang4 }}"><img src="assets/flags/nl.png" alt="" width="80" height="53"><span>Dutch</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang5 }}" onClick="{{ pickLang5 }}"><img src="assets/flags/de.png" alt="" width="80" height="53"><span>German</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang6 }}" onClick="{{ pickLang6 }}"><img src="assets/flags/cn.png" alt="" width="80" height="53"><span>Chinese</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang7 }}" onClick="{{ pickLang7 }}"><img src="assets/flags/hr.png" alt="" width="80" height="53"><span>Croatian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang8 }}" onClick="{{ pickLang8 }}"><img src="assets/flags/si.png" alt="" width="80" height="53"><span>Slovenian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang9 }}" onClick="{{ pickLang9 }}"><img src="assets/flags/hu.png" alt="" width="80" height="53"><span>Hungarian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang10 }}" onClick="{{ pickLang10 }}"><img src="assets/flags/ro.png" alt="" width="80" height="53"><span>Romanian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang11 }}" onClick="{{ pickLang11 }}"><img src="assets/flags/bg.png" alt="" width="80" height="53"><span>Bulgarian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang12 }}" onClick="{{ pickLang12 }}"><img src="assets/flags/gr.png" alt="" width="80" height="53"><span>Greek</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang13 }}" onClick="{{ pickLang13 }}"><img src="assets/flags/pl.png" alt="" width="80" height="53"><span>Polish</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang14 }}" onClick="{{ pickLang14 }}"><img src="assets/flags/dk.png" alt="" width="80" height="53"><span>Danish</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang15 }}" onClick="{{ pickLang15 }}"><img src="assets/flags/fi.png" alt="" width="80" height="53"><span>Finnish</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang16 }}" onClick="{{ pickLang16 }}"><img src="assets/flags/sk.png" alt="" width="80" height="53"><span>Slovak</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang17 }}" onClick="{{ pickLang17 }}"><img src="assets/flags/ee.png" alt="" width="80" height="53"><span>Estonian</span></button>
-          <button type="button" class="cp-lang__chip" aria-pressed="{{ lang18 }}" onClick="{{ pickLang18 }}"><img src="assets/flags/lt.png" alt="" width="80" height="53"><span>Lithuanian</span></button>
-          <div class="cp-lang__more">
-            <h3>Get your language added in <span>24 hours</span>.</h3>
-            <a href="#">Request a language<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- One line on the India page: the language list and the globe are
+       the global page's argument, not this one's. -->
+  <section style="background: #ffffff; padding: 0 112px 88px; display: flex; flex-direction: column; align-items: center;" data-screen-label="Languages">
+    <p class="cp-lang__line">Order edit pages also come in 18 languages, and we can add yours in 24 hours. <a href="#">Request a language<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
   </section>
 
   <!-- ── Built for Shopify ────────────────────────────── -->
@@ -3725,17 +4064,8 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
   <section class="cp-nt" id="book-a-call" data-screen-label="Get started">
     <div class="cp-nt__row">
 
-      <div class="cp-nt__card cp-nt__card--blue">
-        <h2 class="cp-nt__h">Start with a free trial</h2>
-        <button type="button" class="cp-nt__cta" onClick="{{ openPrice }}">View pricing<svg width="16" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></button>
-        <div class="cp-nt__foot">
-          <p class="cp-nt__sub">14 days free, then a monthly plan.</p>
-          <p class="cp-nt__p">Install it from the Shopify App Store and run it on your own orders. Every plan is billed by the month, so you can step away whenever you want to.</p>
-        </div>
-      </div>
-
       <div class="cp-nt__card cp-nt__card--form">
-        <h2 class="cp-nt__h">Book a 15 minute call</h2>
+        <h2 class="cp-nt__h">Book a 15 minute demo</h2>
         <form class="cp-bk__form" data-state="{{ bookState }}" onSubmit="{{ bookSubmit }}">
           <div class="cp-bk__row">
             <label class="cp-bk__f">
@@ -3751,9 +4081,9 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
             <span>Phone number<i>*</i></span>
             <div class="cp-bk__row">
               <span class="cp-bk__sel cp-bk__sel--cc">
-                <select name="country" aria-label="Country dialling code"><option>United States +1</option><option>Canada +1</option><option>United Kingdom +44</option><option>Australia +61</option><option>Germany +49</option><option>France +33</option><option>Netherlands +31</option><option>Spain +34</option><option>Italy +39</option><option>Ireland +353</option><option>Singapore +65</option><option>United Arab Emirates +971</option><option>India +91</option><option>Other</option></select><svg class="cp-bk__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                <select name="country" aria-label="Country dialling code"><option selected>India +91</option><option>United States +1</option><option>Canada +1</option><option>United Kingdom +44</option><option>Australia +61</option><option>Germany +49</option><option>France +33</option><option>Netherlands +31</option><option>Spain +34</option><option>Italy +39</option><option>Ireland +353</option><option>Singapore +65</option><option>United Arab Emirates +971</option><option>Other</option></select><svg class="cp-bk__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
               </span>
-              <input type="tel" name="phone" placeholder="(555) 000-0000" autocomplete="tel" required>
+              <input type="tel" name="phone" placeholder="98765 43210" autocomplete="tel" required>
             </div>
           </div>
           <label class="cp-bk__f">
@@ -3769,6 +4099,15 @@ footer[data-screen-label="Footer"] .cp-ft__bar[style] { flex-direction: column !
           <button type="submit" class="cp-bk__submit"><span>Talk to an expert</span><i>Sending…</i></button>
           <p class="cp-bk__msg" role="status" aria-live="polite"><span>Thanks — we’ll be in touch within one working day.</span><i>That didn’t send. Please try again, or reach us through Book a demo at the top of the page.</i></p>
         </form>
+      </div>
+
+      <div class="cp-nt__card cp-nt__card--blue">
+        <h2 class="cp-nt__h">Start with a free trial</h2>
+        <button type="button" class="cp-nt__cta" onClick="{{ openPrice }}">View pricing<svg width="16" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h15M11 2l5 5-5 5"></path></svg></button>
+        <div class="cp-nt__foot">
+          <p class="cp-nt__sub">14 days free, then a monthly plan.</p>
+          <p class="cp-nt__p">Install it from the Shopify App Store and run it on your own orders. Every plan is billed by the month, so you can step away whenever you want to.</p>
+        </div>
       </div>
 
     </div>
@@ -4599,6 +4938,89 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+  // Case-study carousel: arrows, dots, and which dot is current.
+  // One dot per place the row can actually stop: on a wide screen most
+  // cards fit at once, so there are fewer stops than cards and the spare
+  // dots hide. Delegated from the document because the page body is
+  // rendered by the component runtime after this runs.
+  (function () {
+    var smooth = true;
+    try { smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    function parts(el) {
+      var root = el.closest(".cp-cs4");
+      if (!root) return null;
+      var track = root.querySelector(".cp-cs4__track"),
+          cards = root.querySelectorAll(".cp-cs4__card"),
+          max = Math.max(0, track.scrollWidth - track.clientWidth),
+          stops = [];
+      cards.forEach(function (c) {
+        var x = Math.min(max, c.offsetLeft - cards[0].offsetLeft);
+        if (!stops.length || x - stops[stops.length - 1] > 4) stops.push(x);
+      });
+      return { root: root, track: track, stops: stops };
+    }
+    function current(p) {
+      var x = p.track.scrollLeft, best = 0, d = Infinity;
+      p.stops.forEach(function (s, i) {
+        if (Math.abs(s - x) < d) { d = Math.abs(s - x); best = i; }
+      });
+      return best;
+    }
+    function go(p, i) {
+      i = Math.max(0, Math.min(p.stops.length - 1, i));
+      p.track.scrollTo({ left: p.stops[i], behavior: smooth ? "smooth" : "auto" });
+    }
+    function sync(p) {
+      // not laid out yet (still rendering, or off in a hidden state):
+      // measuring now would find one stop and hide every dot
+      if (!p || !p.track.clientWidth) return;
+      var i = current(p), n = p.stops.length;
+      p.root.querySelectorAll(".cp-cs4__dot").forEach(function (d, j) {
+        d.hidden = j >= n;
+        d.setAttribute("aria-label", "Go to " + (j + 1) + " of " + n);
+        if (j === i) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current");
+      });
+      p.root.querySelector('.cp-cs4__btn[data-dir="-1"]').disabled = i === 0;
+      p.root.querySelector('.cp-cs4__btn[data-dir="1"]').disabled = i === n - 1;
+    }
+    document.addEventListener("click", function (e) {
+      var t = e.target.closest && e.target.closest(".cp-cs4__btn, .cp-cs4__dot");
+      if (!t) return;
+      var p = parts(t);
+      if (t.classList.contains("cp-cs4__dot")) go(p, Number(t.dataset.i));
+      else go(p, current(p) + Number(t.dataset.dir));
+    });
+    document.addEventListener("scroll", function (e) {
+      if (e.target.classList && e.target.classList.contains("cp-cs4__track")) sync(parts(e.target));
+    }, true);
+    // Re-measure whenever a row changes size or scrolls into view, and
+    // pick up any row the runtime renders after this script has run.
+    var seen = new WeakSet();
+    var ro = window.ResizeObserver && new ResizeObserver(function (es) {
+      es.forEach(function (e) { sync(parts(e.target)); });
+    });
+    var io = window.IntersectionObserver && new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) sync(parts(e.target)); });
+    });
+    function init() {
+      document.querySelectorAll(".cp-cs4__track").forEach(function (t) {
+        if (!seen.has(t)) { seen.add(t); if (ro) ro.observe(t); if (io) io.observe(t); }
+        sync(parts(t));
+      });
+    }
+    window.addEventListener("load", init);
+    window.addEventListener("resize", init);
+    if (window.MutationObserver) {
+      var queued = false;
+      new MutationObserver(function () {
+        if (queued) return; queued = true;
+        requestAnimationFrame(function () { queued = false; init(); });
+      }).observe(document.documentElement, { childList: true, subtree: true });
+    }
+    setTimeout(init, 300);
+  })();
 </script>
 </body>
 </html>
